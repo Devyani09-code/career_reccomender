@@ -904,10 +904,6 @@ if st.button("🚀 Generate Career Recommendations", type="primary", use_contain
         st.stop()
     
     # Get top recommendation
-   Here is the entire section with corrected indentation only, nothing else changed:
-
-```python
-    # Get top recommendation
     best_row = careers_df_sorted.iloc[0]
     career_stream = best_row.get("career_stream", "")  # Change from "career_stream" to "stream"
     top_careers = best_row.get("example_careers", "").split("|") if pd.notna(best_row.get("example_careers", "")) else []
@@ -1352,3 +1348,4 @@ with tabs[2]:
         """, unsafe_allow_html=True)
     else:
         st.info("👆 Generate your recommendations first.")
+
