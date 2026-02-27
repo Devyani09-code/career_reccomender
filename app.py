@@ -934,19 +934,24 @@ if st.button("🚀 Generate Career Recommendations", type="primary", use_contain
         quiz_scores=dict(quiz_trait_scores),
         career_stream = career_stream,
     )
+st.session_state.career_stream = career_stream
+    st.session_state.best_row = best_row
+    st.session_state.score_column = score_column
+    st.session_state.top_careers = top_careers
+    st.session_state.careers_df_sorted = careers_df_sorted
 
-career_stream = ""
-best_row = None
-score_column = "rule_based_score"
-top_careers = []
-careers_df_sorted = pd.DataFrame()
+career_stream = st.session_state.get("career_stream", "")
+best_row = st.session_state.get("best_row", None)
+score_column = st.session_state.get("score_column", "rule_based_score")
+top_careers = st.session_state.get("top_careers", [])
+careers_df_sorted = st.session_state.get("careers_df_sorted", pd.DataFrame())
 
     # --- DISPLAY RESULTS IN TABS ---
 tabs = st.tabs(["Results", "Analysis", "Roadmap"])
 
     
 with tabs[0]:
-
+  if best_row is not None:
     st.markdown(f"""
     <div class='theme-card'>
         <h2 style='color: {PRIMARY_COLOR}; text-align: center;'>Your Career Recommendation</h2>
@@ -1034,9 +1039,11 @@ with tabs[0]:
                 """, unsafe_allow_html=True)
     else:
         st.info("No alternative career paths found.")
-
+  else:
+        st.info("👆 Fill in your grades and click 'Generate Career Recommendations' to see results.")
 
 with tabs[1]:
+  if best_row is not None:
     st.markdown(f"""
     <div class='theme-card'>
         <h3 style='color: {PRIMARY_COLOR};'>📊 Score Breakdown & Subject Analysis</h3>
@@ -1206,8 +1213,11 @@ with tabs[1]:
             req_idx += 1
     else:
         st.info("No specific subject requirements found for this career path.")
-
+  else:
+        st.info("👆 Fill in your grades and click 'Generate Career Recommendations' to see results.")
+     
 with tabs[2]:
+  if best_row is not None:
     st.markdown(f"""
     <div class='theme-card'>
         <h3 style='color: {PRIMARY_COLOR};'>🗺️ Your Career Roadmap</h3>
@@ -1363,3 +1373,5 @@ with tabs[2]:
     </div>
 
     """, unsafe_allow_html=True)
+else:
+  st.info("👆 Fill in your grades and click 'Generate Career Recommendations' to see results.")
