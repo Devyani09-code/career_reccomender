@@ -715,15 +715,6 @@ with quiz_tab2:
 # Add spacing before generate button
 st.markdown("<br><br>", unsafe_allow_html=True)
 
-# Debug print
-CAREERS_FILE="C:\\career_recommender\\datasets\\careers.csv"
-print(f"📁 Dataset path: {CAREERS_FILE}")
-print(f"✅ File exists: {os.path.exists(CAREERS_FILE)}")
-
-if not os.path.exists(CAREERS_FILE):
-    print(f"❌ File NOT found at: {CAREERS_FILE}")
-    print("Make sure 'careers.csv' is in the 'datasets' folder")
-
 # --- GENERATE RECOMMENDATION ---
 if st.button("🚀 Generate Career Recommendations", type="primary", use_container_width=True):
     # Validation check
@@ -944,7 +935,12 @@ if st.button("🚀 Generate Career Recommendations", type="primary", use_contain
         career_stream = career_stream,
     )
 
-  
+career_stream = ""
+best_row = None
+score_column = "rule_based_score"
+top_careers = []
+careers_df_sorted = pd.DataFrame()
+
     # --- DISPLAY RESULTS IN TABS ---
 tabs = st.tabs(["Results", "Analysis", "Roadmap"])
 
@@ -1365,4 +1361,5 @@ with tabs[2]:
             </div>
         </div>
     </div>
+
     """, unsafe_allow_html=True)
