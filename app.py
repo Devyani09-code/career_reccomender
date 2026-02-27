@@ -904,27 +904,29 @@ if st.button("🚀 Generate Career Recommendations", type="primary", use_contain
         st.stop()
     
     # Get top recommendation
+   Here is the entire section with corrected indentation only, nothing else changed:
+
+```python
+    # Get top recommendation
     best_row = careers_df_sorted.iloc[0]
     career_stream = best_row.get("career_stream", "")  # Change from "career_stream" to "stream"
     top_careers = best_row.get("example_careers", "").split("|") if pd.notna(best_row.get("example_careers", "")) else []
-    
-# Calculate rule-based scores for all careers
+
+    # Calculate rule-based scores for all careers
     scores = careers_df.apply(calc_score, axis=1)
     careers_df["subject_score"] = [s[0] for s in scores]
     careers_df["primary_interest_match"] = [s[1] for s in scores]
     careers_df["rule_based_score"] = [s[2] for s in scores]
     careers_df["secondary_match"] = [s[3] for s in scores]
     careers_df["personality_score"] = [s[4] for s in scores]
-    
-     # Get top recommendation
+
+    # Get top recommendation
     sort_column = "final_score" if "final_score" in careers_df.columns else "rule_based_score"
     careers_df_sorted = careers_df.sort_values(sort_column, ascending=False)
     best_row = careers_df_sorted.iloc[0]
     career_stream = best_row.get("career_stream", "")
-    print(f"DEBUG - career_stream = '{career_stream}'") 
+    print(f"DEBUG - career_stream = '{career_stream}'")
     top_careers = best_row.get("example_careers", "").split("|") if pd.notna(best_row.get("example_careers", "")) else []
-   
-
 
     # Save user data for ML training
     save_user_data_for_training(
@@ -932,9 +934,9 @@ if st.button("🚀 Generate Career Recommendations", type="primary", use_contain
         grades=grades,
         interests={'primary': primary_interest, 'secondary': secondary_interest},
         quiz_scores=dict(quiz_trait_scores),
-        career_stream = career_stream,
+        career_stream=career_stream,
     )
-st.session_state.career_stream = career_stream
+    st.session_state.career_stream = career_stream
     st.session_state.best_row = best_row
     st.session_state.score_column = score_column
     st.session_state.top_careers = top_careers
@@ -946,432 +948,407 @@ score_column = st.session_state.get("score_column", "rule_based_score")
 top_careers = st.session_state.get("top_careers", [])
 careers_df_sorted = st.session_state.get("careers_df_sorted", pd.DataFrame())
 
-    # --- DISPLAY RESULTS IN TABS ---
+# --- DISPLAY RESULTS IN TABS ---
 tabs = st.tabs(["Results", "Analysis", "Roadmap"])
 
-    
 with tabs[0]:
-  if best_row is not None:
-    st.markdown(f"""
-    <div class='theme-card'>
-        <h2 style='color: {PRIMARY_COLOR}; text-align: center;'>Your Career Recommendation</h2>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Top metrics in cards
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
+    if best_row is not None:
         st.markdown(f"""
-        <div class='metric-card'>
-            <h3>Recommended Stream</h3>
-            <h2>{career_stream}</h2>
+        <div class='theme-card'>
+            <h2 style='color: {PRIMARY_COLOR}; text-align: center;'>Your Career Recommendation</h2>
         </div>
         """, unsafe_allow_html=True)
 
-    with col2:
-        success_prob = min(99, int(best_row[score_column]))
-        if st.session_state.ml_models:
+        # Top metrics in cards
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
             st.markdown(f"""
             <div class='metric-card'>
-                <h3>AI Match Score</h3>
-                <h2>{success_prob}%</h2>
-                <small>AI-Powered Analysis</small>
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            st.markdown(f"""
-            <div class='metric-card'>
-                <h3>Match Score</h3>
-                <h2>{success_prob}%</h2>
+                <h3>Recommended Stream</h3>
+                <h2>{career_stream}</h2>
             </div>
             """, unsafe_allow_html=True)
 
-    with col3:
-        top_career = top_careers[0] if top_careers else "Various Careers"
-        st.markdown(f"""
-        <div class='metric-card'>
-            <h3>Top Career</h3>
-            <h2>{top_career}</h2>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # Alternative paths
-    st.markdown(f"""
-    <div class='theme-card'>
-        <h3 style='color: {PRIMARY_COLOR};'>Alternative Career Paths</h3>
-    </div>
-    """, unsafe_allow_html=True)
-
-    top_alternatives = []
-    for idx in range(1, min(4, len(careers_df_sorted))):
-        alt_row = careers_df_sorted.iloc[idx]
-        alt_stream = alt_row.get("career_stream", "")
-        alt_careers = (
-            alt_row.get("example_careers", "").split("|")
-            if pd.notna(alt_row.get("example_careers", ""))
-            else []
-        )
-
-        if alt_stream != career_stream:
-            top_alternatives.append({
-                "career_stream": alt_stream,
-                "score": alt_row[score_column],
-                "top_career": alt_careers[0] if alt_careers else "Various",
-                "academic_match": alt_row["subject_score"],
-                "interest_match": "Yes" if alt_row["primary_interest_match"] else "No",
-            })
-
-    if top_alternatives:
-        cols = st.columns(len(top_alternatives))
-        for idx, alt in enumerate(top_alternatives):
-            with cols[idx]:
+        with col2:
+            success_prob = min(99, int(best_row[score_column]))
+            if st.session_state.ml_models:
                 st.markdown(f"""
-                <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px;
-                            border-left: 4px solid {ACCENT_COLOR_1};'>
-                    <h4>Alternative {idx+1}</h4>
-                    <h3>{alt['career_stream']}</h3>
-                    <p><b>Match Score:</b> {int(alt['score'])}%</p>
-                    <p><b>Top Career:</b> {alt['top_career']}</p>
-                    <p><b>Interest Match:</b> {alt['interest_match']}</p>
-                    <p><b>Academic Fit:</b> {int(alt['academic_match'])}%</p>
+                <div class='metric-card'>
+                    <h3>AI Match Score</h3>
+                    <h2>{success_prob}%</h2>
+                    <small>AI-Powered Analysis</small>
                 </div>
                 """, unsafe_allow_html=True)
+            else:
+                st.markdown(f"""
+                <div class='metric-card'>
+                    <h3>Match Score</h3>
+                    <h2>{success_prob}%</h2>
+                </div>
+                """, unsafe_allow_html=True)
+
+        with col3:
+            top_career = top_careers[0] if top_careers else "Various Careers"
+            st.markdown(f"""
+            <div class='metric-card'>
+                <h3>Top Career</h3>
+                <h2>{top_career}</h2>
+            </div>
+            """, unsafe_allow_html=True)
+
+        # Alternative paths
+        st.markdown(f"""
+        <div class='theme-card'>
+            <h3 style='color: {PRIMARY_COLOR};'>Alternative Career Paths</h3>
+        </div>
+        """, unsafe_allow_html=True)
+
+        top_alternatives = []
+        for idx in range(1, min(4, len(careers_df_sorted))):
+            alt_row = careers_df_sorted.iloc[idx]
+            alt_stream = alt_row.get("career_stream", "")
+            alt_careers = (
+                alt_row.get("example_careers", "").split("|")
+                if pd.notna(alt_row.get("example_careers", ""))
+                else []
+            )
+
+            if alt_stream != career_stream:
+                top_alternatives.append({
+                    "career_stream": alt_stream,
+                    "score": alt_row[score_column],
+                    "top_career": alt_careers[0] if alt_careers else "Various",
+                    "academic_match": alt_row["subject_score"],
+                    "interest_match": "Yes" if alt_row["primary_interest_match"] else "No",
+                })
+
+        if top_alternatives:
+            cols = st.columns(len(top_alternatives))
+            for idx, alt in enumerate(top_alternatives):
+                with cols[idx]:
+                    st.markdown(f"""
+                    <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px;
+                                border-left: 4px solid {ACCENT_COLOR_1};'>
+                        <h4>Alternative {idx+1}</h4>
+                        <h3>{alt['career_stream']}</h3>
+                        <p><b>Match Score:</b> {int(alt['score'])}%</p>
+                        <p><b>Top Career:</b> {alt['top_career']}</p>
+                        <p><b>Interest Match:</b> {alt['interest_match']}</p>
+                        <p><b>Academic Fit:</b> {int(alt['academic_match'])}%</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+        else:
+            st.info("No alternative career paths found.")
     else:
-        st.info("No alternative career paths found.")
-  else:
         st.info("👆 Fill in your grades and click 'Generate Career Recommendations' to see results.")
 
 with tabs[1]:
-  if best_row is not None:
-    st.markdown(f"""
-    <div class='theme-card'>
-        <h3 style='color: {PRIMARY_COLOR};'>📊 Score Breakdown & Subject Analysis</h3>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Pie chart at the top
-    st.subheader("⚖️ Score Weight Distribution")
-    
-    # Calculate breakdown properly
-    academic_val = float(best_row["subject_score"])
-    interest_val = 70.0 if best_row.get("primary_interest_match", False) else 0.0
-    if best_row.get('secondary_match', False):
-        interest_val = 100.0 if interest_val == 70 else 40.0
-    personality_val = float(best_row.get("personality_score", 50))
-    
-    # Normalize for pie chart
-    total = academic_val + interest_val + personality_val
-    if total > 0:
-        academic_pct = (academic_val / total) * 100
-        interest_pct = (interest_val / total) * 100
-        personality_pct = (personality_val / total) * 100
-    else:
-        academic_pct = interest_pct = personality_pct = 33.33
-    
-    breakdown = {
-        "Academic (45%)": academic_pct,
-        "Interest (35%)": interest_pct,
-        "Personality (20%)": personality_pct
-    }
-    
-    # Create two columns for pie chart and explanation
-    pie_col, explain_col = st.columns([2, 3])
-    
-    with pie_col:
-        # Create pie chart with your theme colors
-        fig, ax = plt.subplots(figsize=(6, 6))
-        
-        colors = [ACCENT_COLOR_1, ACCENT_COLOR_2, ACCENT_COLOR_3]
-        
-        wedges, texts, autotexts = ax.pie(
-            breakdown.values(),
-            labels=breakdown.keys(),
-            autopct='%1.1f%%',
-            startangle=90,
-            colors=colors,
-            wedgeprops={'edgecolor': 'white', 'linewidth': 2},
-            textprops={'fontsize': 10, 'color': TEXT_COLOR},
-            explode=(0.05, 0.05, 0.05)
-        )
-        
-        # Style the percentages
-        for autotext in autotexts:
-            autotext.set_color('white')
-            autotext.set_fontweight('bold')
-            autotext.set_backgroundcolor(PRIMARY_COLOR)
-        
-        ax.axis('equal')
-        fig.patch.set_facecolor(BACKGROUND_COLOR)
-        plt.tight_layout()
-        st.pyplot(fig)
-    
-    with explain_col:
+    if best_row is not None:
         st.markdown(f"""
-        ### What This Breakdown Means:
-        
-        **🎓 Academic Subjects ({int(academic_pct)}%)**
-        - Based on your grades in all 7 subjects
-        - Higher scores in relevant subjects increase this component
-        
-        **❤️ Interest Match ({int(interest_pct)}%)**
-        - Primary interest match: +70%
-        - Secondary interest match: +40% bonus
-        
-        **🧩 Personality ({int(personality_pct)}%)**
-        - Derived from your psychometric test responses
-        - Evaluates personality traits and work preferences
-        """)
-    
-    # --- SUBJECT STRENGTH ANALYSIS (below pie chart) ---
-    st.markdown("---")
-    st.subheader("📈 Subject Strength Analysis (All 7 Subjects)")
-    
-    # Get the required subjects for this career stream
-    if pd.notna(best_row.get("core_subjects", "")):
-        career_subjects = best_row["core_subjects"].split("|")
-    else:
-        career_subjects = []
-    
-    # Subject display names and values for all 7 subjects
-    subject_display_names = ['Math', 'Science', 'English', 'Economics', 'P.E.', 'Computers', 'Soc. Studies']
-    subject_values = [
-        grades['Math'],
-        grades['Science'],
-        grades['English'],
-        grades['Economics'],
-        grades['Physical Education'],
-        grades['Computers'],
-        grades['Social Studies']
-    ]
-    subject_colors = [PRIMARY_COLOR, ACCENT_COLOR_1, ACCENT_COLOR_2, ACCENT_COLOR_3, 
-                      ACCENT_COLOR_1, ACCENT_COLOR_2, ACCENT_COLOR_3]
-    
-    # Create progress bars for each subject
-    for i, (subj, val, color) in enumerate(zip(subject_display_names, subject_values, subject_colors)):
-        # Determine if this subject is critical for the career
-        is_critical = False
-        for cs in career_subjects:
-            cs_clean = cs.strip().lower()
-            subj_clean = subj.lower()
-            if subj_clean in cs_clean or cs_clean in subj_clean:
-                is_critical = True
-                break
-            # Handle special cases
-            if subj == "P.E." and "physical" in cs_clean:
-                is_critical = True
-                break
-            if subj == "Soc. Studies" and ("history" in cs_clean or "political" in cs_clean or "geography" in cs_clean):
-                is_critical = True
-                break
-            if subj == "Economics" and ("business" in cs_clean or "finance" in cs_clean or "commerce" in cs_clean):
-                is_critical = True
-                break
-            if subj == "Computers" and ("computer" in cs_clean or "it" in cs_clean or "data" in cs_clean):
-                is_critical = True
-                break
-        
-        # Create subject row
-        col_subj, col_bar = st.columns([1, 3])
-        with col_subj:
-            if is_critical:
-                st.markdown(f"**{subj}** ⭐")
-            else:
-                st.markdown(f"**{subj}**")
-        
-        with col_bar:
-            # Create custom progress bar
-            progress_color = PRIMARY_COLOR if is_critical else color
+        <div class='theme-card'>
+            <h3 style='color: {PRIMARY_COLOR};'>📊 Score Breakdown & Subject Analysis</h3>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Pie chart at the top
+        st.subheader("⚖️ Score Weight Distribution")
+
+        # Calculate breakdown properly
+        academic_val = float(best_row["subject_score"])
+        interest_val = 70.0 if best_row.get("primary_interest_match", False) else 0.0
+        if best_row.get('secondary_match', False):
+            interest_val = 100.0 if interest_val == 70 else 40.0
+        personality_val = float(best_row.get("personality_score", 50))
+
+        # Normalize for pie chart
+        total = academic_val + interest_val + personality_val
+        if total > 0:
+            academic_pct = (academic_val / total) * 100
+            interest_pct = (interest_val / total) * 100
+            personality_pct = (personality_val / total) * 100
+        else:
+            academic_pct = interest_pct = personality_pct = 33.33
+
+        breakdown = {
+            "Academic (45%)": academic_pct,
+            "Interest (35%)": interest_pct,
+            "Personality (20%)": personality_pct
+        }
+
+        # Create two columns for pie chart and explanation
+        pie_col, explain_col = st.columns([2, 3])
+
+        with pie_col:
+            fig, ax = plt.subplots(figsize=(6, 6))
+            colors = [ACCENT_COLOR_1, ACCENT_COLOR_2, ACCENT_COLOR_3]
+            wedges, texts, autotexts = ax.pie(
+                breakdown.values(),
+                labels=breakdown.keys(),
+                autopct='%1.1f%%',
+                startangle=90,
+                colors=colors,
+                wedgeprops={'edgecolor': 'white', 'linewidth': 2},
+                textprops={'fontsize': 10, 'color': TEXT_COLOR},
+                explode=(0.05, 0.05, 0.05)
+            )
+            for autotext in autotexts:
+                autotext.set_color('white')
+                autotext.set_fontweight('bold')
+                autotext.set_backgroundcolor(PRIMARY_COLOR)
+            ax.axis('equal')
+            fig.patch.set_facecolor(BACKGROUND_COLOR)
+            plt.tight_layout()
+            st.pyplot(fig)
+
+        with explain_col:
             st.markdown(f"""
-            <div style='background-color: {SECONDARY_BG}; border-radius: 10px; height: 30px; width: 100%; margin: 5px 0;'>
-                <div style='background: linear-gradient(90deg, {progress_color}, {color}); 
-                            width: {val}%; height: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;'>
-                    <span style='color: white; font-weight: bold;'>{int(val)}%</span>
+            ### What This Breakdown Means:
+            
+            **🎓 Academic Subjects ({int(academic_pct)}%)**
+            - Based on your grades in all 7 subjects
+            - Higher scores in relevant subjects increase this component
+            
+            **❤️ Interest Match ({int(interest_pct)}%)**
+            - Primary interest match: +70%
+            - Secondary interest match: +40% bonus
+            
+            **🧩 Personality ({int(personality_pct)}%)**
+            - Derived from your psychometric test responses
+            - Evaluates personality traits and work preferences
+            """)
+
+        # --- SUBJECT STRENGTH ANALYSIS ---
+        st.markdown("---")
+        st.subheader("📈 Subject Strength Analysis (All 7 Subjects)")
+
+        if pd.notna(best_row.get("core_subjects", "")):
+            career_subjects = best_row["core_subjects"].split("|")
+        else:
+            career_subjects = []
+
+        subject_display_names = ['Math', 'Science', 'English', 'Economics', 'P.E.', 'Computers', 'Soc. Studies']
+        subject_values = [
+            grades['Math'],
+            grades['Science'],
+            grades['English'],
+            grades['Economics'],
+            grades['Physical Education'],
+            grades['Computers'],
+            grades['Social Studies']
+        ]
+        subject_colors = [PRIMARY_COLOR, ACCENT_COLOR_1, ACCENT_COLOR_2, ACCENT_COLOR_3,
+                          ACCENT_COLOR_1, ACCENT_COLOR_2, ACCENT_COLOR_3]
+
+        for i, (subj, val, color) in enumerate(zip(subject_display_names, subject_values, subject_colors)):
+            is_critical = False
+            for cs in career_subjects:
+                cs_clean = cs.strip().lower()
+                subj_clean = subj.lower()
+                if subj_clean in cs_clean or cs_clean in subj_clean:
+                    is_critical = True
+                    break
+                if subj == "P.E." and "physical" in cs_clean:
+                    is_critical = True
+                    break
+                if subj == "Soc. Studies" and ("history" in cs_clean or "political" in cs_clean or "geography" in cs_clean):
+                    is_critical = True
+                    break
+                if subj == "Economics" and ("business" in cs_clean or "finance" in cs_clean or "commerce" in cs_clean):
+                    is_critical = True
+                    break
+                if subj == "Computers" and ("computer" in cs_clean or "it" in cs_clean or "data" in cs_clean):
+                    is_critical = True
+                    break
+
+            col_subj, col_bar = st.columns([1, 3])
+            with col_subj:
+                if is_critical:
+                    st.markdown(f"**{subj}** ⭐")
+                else:
+                    st.markdown(f"**{subj}**")
+            with col_bar:
+                progress_color = PRIMARY_COLOR if is_critical else color
+                st.markdown(f"""
+                <div style='background-color: {SECONDARY_BG}; border-radius: 10px; height: 30px; width: 100%; margin: 5px 0;'>
+                    <div style='background: linear-gradient(90deg, {progress_color}, {color}); 
+                                width: {val}%; height: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;'>
+                        <span style='color: white; font-weight: bold;'>{int(val)}%</span>
+                    </div>
                 </div>
+                """, unsafe_allow_html=True)
+
+        st.markdown("---")
+        st.markdown("**📌 Required Subjects for this Career:**")
+
+        if career_subjects:
+            req_cols = st.columns(3)
+            req_idx = 0
+            for subject in career_subjects[:9]:
+                subject_clean = subject.strip()
+                display_name = subject_clean.replace('_', ' ')
+                with req_cols[req_idx % 3]:
+                    st.markdown(f"""
+                    <span style='background-color: {SECONDARY_BG}; color: {TEXT_COLOR}; 
+                               padding: 8px 12px; border-radius: 20px; font-size: 0.9rem;
+                               border-left: 4px solid {PRIMARY_COLOR}; display: inline-block; margin: 3px; font-weight: 500;'>
+                        {display_name}
+                    </span>
+                    """, unsafe_allow_html=True)
+                req_idx += 1
+        else:
+            st.info("No specific subject requirements found for this career path.")
+    else:
+        st.info("👆 Generate your recommendations first.")
+
+with tabs[2]:
+    if best_row is not None:
+        st.markdown(f"""
+        <div class='theme-card'>
+            <h3 style='color: {PRIMARY_COLOR};'>🗺️ Your Career Roadmap</h3>
+        </div>
+        """, unsafe_allow_html=True)
+
+        if pd.notna(best_row.get("core_subjects", "")):
+            career_subjects = best_row["core_subjects"].split("|")
+        else:
+            career_subjects = ["Relevant subjects"]
+
+        entrance_exams = "Relevant exams"
+        if not colleges_df.empty and career_stream:
+            matching_colleges = colleges_df[colleges_df['career_stream'].str.contains(career_stream, case=False, na=False)]
+            if not matching_colleges.empty and 'entrance_test' in matching_colleges.columns:
+                exams = matching_colleges['entrance_test'].dropna().unique()
+                if len(exams) > 0:
+                    entrance_exams = exams[0].split()[0] if len(exams) == 1 else f"{exams[0].split()[0]}, {exams[1].split()[0]}"
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            st.markdown(f"""
+            <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px; 
+                        border-left: 5px solid {PRIMARY_COLOR}; text-align: center; height: 140px;'>
+                <div style='background-color: {PRIMARY_COLOR}; width: 30px; height: 30px; 
+                            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+                            margin: 0 auto 10px auto;'>
+                    <span style='color: white; font-weight: bold;'>1</span>
+                </div>
+                <h4 style='color: {PRIMARY_COLOR}; margin-bottom: 5px; font-size: 1rem;'>11th-12th</h4>
+                <p style='color: {TEXT_COLOR}; font-size: 0.8rem; margin: 0;'>
+                    {', '.join([s.replace('_', ' ') for s in career_subjects[:2]])}
+                </p>
             </div>
             """, unsafe_allow_html=True)
-    
-    # Subject requirements summary
-    st.markdown("---")
-    st.markdown("**📌 Required Subjects for this Career:**")
-    
-    # Show required subjects as tags in a grid
-    if career_subjects:
-        req_cols = st.columns(3)
-        req_idx = 0
-        for subject in career_subjects[:9]:  # Show up to 9 required subjects
-            subject_clean = subject.strip()
-            display_name = subject_clean.replace('_', ' ')
-            with req_cols[req_idx % 3]:
-                st.markdown(f"""
-                <span style='background-color: {SECONDARY_BG}; color: {TEXT_COLOR}; 
-                           padding: 8px 12px; border-radius: 20px; font-size: 0.9rem;
-                           border-left: 4px solid {PRIMARY_COLOR}; display: inline-block; margin: 3px; font-weight: 500;'>
-                    {display_name}
-                </span>
-                """, unsafe_allow_html=True)
-            req_idx += 1
-    else:
-        st.info("No specific subject requirements found for this career path.")
-  else:
-        st.info("👆 Fill in your grades and click 'Generate Career Recommendations' to see results.")
-     
-with tabs[2]:
-  if best_row is not None:
-    st.markdown(f"""
-    <div class='theme-card'>
-        <h3 style='color: {PRIMARY_COLOR};'>🗺️ Your Career Roadmap</h3>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Get career subjects and entrance exams
-    if pd.notna(best_row.get("core_subjects", "")):
-        career_subjects = best_row["core_subjects"].split("|")
-    else:
-        career_subjects = ["Relevant subjects"]
-    
-    # Get entrance exams
-    entrance_exams = "Relevant exams"
-    if not colleges_df.empty and career_stream:
-        matching_colleges = colleges_df[colleges_df['career_stream'].str.contains(career_stream, case=False, na=False)]
-        if not matching_colleges.empty and 'entrance_test' in matching_colleges.columns:
-            exams = matching_colleges['entrance_test'].dropna().unique()
-            if len(exams) > 0:
-                entrance_exams = exams[0].split()[0] if len(exams) == 1 else f"{exams[0].split()[0]}, {exams[1].split()[0]}"
-    
-    # Simple 4-step career path - clean and precise
-    col1, col2, col3, col4 = st.columns(4)
-    
-    with col1:
-        st.markdown(f"""
-        <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px; 
-                    border-left: 5px solid {PRIMARY_COLOR}; text-align: center; height: 140px;'>
-            <div style='background-color: {PRIMARY_COLOR}; width: 30px; height: 30px; 
-                        border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-                        margin: 0 auto 10px auto;'>
-                <span style='color: white; font-weight: bold;'>1</span>
-            </div>
-            <h4 style='color: {PRIMARY_COLOR}; margin-bottom: 5px; font-size: 1rem;'>11th-12th</h4>
-            <p style='color: {TEXT_COLOR}; font-size: 0.8rem; margin: 0;'>
-                {', '.join([s.replace('_', ' ') for s in career_subjects[:2]])}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown(f"""
-        <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px; 
-                    border-left: 5px solid {ACCENT_COLOR_1}; text-align: center; height: 140px;'>
-            <div style='background-color: {ACCENT_COLOR_1}; width: 30px; height: 30px; 
-                        border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-                        margin: 0 auto 10px auto;'>
-                <span style='color: white; font-weight: bold;'>2</span>
-            </div>
-            <h4 style='color: {ACCENT_COLOR_1}; margin-bottom: 5px; font-size: 1rem;'>Entrance</h4>
-            <p style='color: {TEXT_COLOR}; font-size: 0.8rem; margin: 0;'>
-                {entrance_exams}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col3:
-        st.markdown(f"""
-        <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px; 
-                    border-left: 5px solid {ACCENT_COLOR_2}; text-align: center; height: 140px;'>
-            <div style='background-color: {ACCENT_COLOR_2}; width: 30px; height: 30px; 
-                        border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-                        margin: 0 auto 10px auto;'>
-                <span style='color: white; font-weight: bold;'>3</span>
-            </div>
-            <h4 style='color: {ACCENT_COLOR_2}; margin-bottom: 5px; font-size: 1rem;'>Degree</h4>
-            <p style='color: {TEXT_COLOR}; font-size: 0.8rem; margin: 0;'>
-                {career_stream.replace('_', ' ').split()[0] if ' ' in career_stream else career_stream[:10]}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col4:
-        st.markdown(f"""
-        <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px; 
-                    border-left: 5px solid {ACCENT_COLOR_3}; text-align: center; height: 140px;'>
-            <div style='background-color: {ACCENT_COLOR_3}; width: 30px; height: 30px; 
-                        border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-                        margin: 0 auto 10px auto;'>
-                <span style='color: white; font-weight: bold;'>4</span>
-            </div>
-            <h4 style='color: {ACCENT_COLOR_3}; margin-bottom: 5px; font-size: 1rem;'>Career</h4>
-            <p style='color: {TEXT_COLOR}; font-size: 0.8rem; margin: 0;'>
-                {top_careers[0].split()[0] if top_careers else 'Job'}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # --- CAREER GROWTH PROJECTION ---
-    st.markdown("---")
-    st.subheader("📈 10-Year Growth Projection")
-    
-    # Calculate growth rate
-    years = list(range(1, 11))
-    base_score = best_row[score_column]
-    
-    if career_stream in ['Medical', 'Computer Science', 'Engineering', 'Aerospace_Engineering', 'IT_Computer_Science']:
-        growth_rate = 0.10
-    elif career_stream in ['Business Management', 'Commerce', 'Chartered_Accountancy', 'Company_Secretary', 'Sports_Management']:
-        growth_rate = 0.08
-    elif career_stream in ['Design', 'Fashion_Design', 'Graphic_Design', 'Photography', 'Performing_Arts']:
-        growth_rate = 0.07
-    else:
-        growth_rate = 0.06
-    
-    growth_curve = [base_score * (1 + growth_rate * y) for y in years]
-    
-    # Simple chart
-    fig2, ax2 = plt.subplots(figsize=(10, 4))
-    ax2.plot(years, growth_curve, marker='o', color=PRIMARY_COLOR, linewidth=2, markersize=6)
-    ax2.fill_between(years, growth_curve, alpha=0.2, color=ACCENT_COLOR_1)
-    ax2.set_xlabel('Years')
-    ax2.set_ylabel('Career Index')
-    ax2.set_title(f'Growth: {career_stream.replace("_", " ")[:20]}')
-    ax2.grid(True, alpha=0.3)
-    ax2.set_facecolor(BACKGROUND_COLOR)
-    fig2.patch.set_facecolor(BACKGROUND_COLOR)
-    plt.tight_layout()
-    st.pyplot(fig2)
-    
-    # --- SHORT GROWTH INSIGHTS BELOW GRAPH ---
-    year_1_value = growth_curve[0]
-    year_5_value = growth_curve[4]
-    year_10_value = growth_curve[9]
-    five_year_growth = ((year_5_value - year_1_value) / year_1_value) * 100
-    ten_year_growth = ((year_10_value - year_1_value) / year_1_value) * 100
-    
-    st.markdown(f"""
-    <div style='background-color: {SECONDARY_BG}; border-radius: 10px; padding: 15px; 
-                border-left: 5px solid {PRIMARY_COLOR}; margin-top: 15px;'>
-        <div style='display: flex; justify-content: space-around; text-align: center;'>
-            <div>
-                <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>Year 1</p>
-                <p style='color: {PRIMARY_COLOR}; font-size: 1.2rem; font-weight: bold; margin: 0;'>{int(year_1_value)}</p>
-            </div>
-            <div>
-                <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>Year 5</p>
-                <p style='color: {ACCENT_COLOR_1}; font-size: 1.2rem; font-weight: bold; margin: 0;'>{int(year_5_value)}</p>
-            </div>
-            <div>
-                <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>Year 10</p>
-                <p style='color: {ACCENT_COLOR_2}; font-size: 1.2rem; font-weight: bold; margin: 0;'>{int(year_10_value)}</p>
-            </div>
-            <div>
-                <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>5Y Growth</p>
-                <p style='color: {PRIMARY_COLOR}; font-size: 1.2rem; font-weight: bold; margin: 0;'>+{five_year_growth:.0f}%</p>
-            </div>
-            <div>
-                <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>10Y Growth</p>
-                <p style='color: {ACCENT_COLOR_2}; font-size: 1.2rem; font-weight: bold; margin: 0;'>+{ten_year_growth:.0f}%</p>
-            </div>
-        </div>
-    </div>
 
-    """, unsafe_allow_html=True)
-else:
-  st.info("👆 Fill in your grades and click 'Generate Career Recommendations' to see results.")
+        with col2:
+            st.markdown(f"""
+            <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px; 
+                        border-left: 5px solid {ACCENT_COLOR_1}; text-align: center; height: 140px;'>
+                <div style='background-color: {ACCENT_COLOR_1}; width: 30px; height: 30px; 
+                            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+                            margin: 0 auto 10px auto;'>
+                    <span style='color: white; font-weight: bold;'>2</span>
+                </div>
+                <h4 style='color: {ACCENT_COLOR_1}; margin-bottom: 5px; font-size: 1rem;'>Entrance</h4>
+                <p style='color: {TEXT_COLOR}; font-size: 0.8rem; margin: 0;'>
+                    {entrance_exams}
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with col3:
+            st.markdown(f"""
+            <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px; 
+                        border-left: 5px solid {ACCENT_COLOR_2}; text-align: center; height: 140px;'>
+                <div style='background-color: {ACCENT_COLOR_2}; width: 30px; height: 30px; 
+                            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+                            margin: 0 auto 10px auto;'>
+                    <span style='color: white; font-weight: bold;'>3</span>
+                </div>
+                <h4 style='color: {ACCENT_COLOR_2}; margin-bottom: 5px; font-size: 1rem;'>Degree</h4>
+                <p style='color: {TEXT_COLOR}; font-size: 0.8rem; margin: 0;'>
+                    {career_stream.replace('_', ' ').split()[0] if ' ' in career_stream else career_stream[:10]}
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with col4:
+            st.markdown(f"""
+            <div style='background-color: {SECONDARY_BG}; padding: 15px; border-radius: 10px; 
+                        border-left: 5px solid {ACCENT_COLOR_3}; text-align: center; height: 140px;'>
+                <div style='background-color: {ACCENT_COLOR_3}; width: 30px; height: 30px; 
+                            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+                            margin: 0 auto 10px auto;'>
+                    <span style='color: white; font-weight: bold;'>4</span>
+                </div>
+                <h4 style='color: {ACCENT_COLOR_3}; margin-bottom: 5px; font-size: 1rem;'>Career</h4>
+                <p style='color: {TEXT_COLOR}; font-size: 0.8rem; margin: 0;'>
+                    {top_careers[0].split()[0] if top_careers else 'Job'}
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("---")
+        st.subheader("📈 10-Year Growth Projection")
+
+        years = list(range(1, 11))
+        base_score = best_row[score_column]
+
+        if career_stream in ['Medical', 'Computer Science', 'Engineering', 'Aerospace_Engineering', 'IT_Computer_Science']:
+            growth_rate = 0.10
+        elif career_stream in ['Business Management', 'Commerce', 'Chartered_Accountancy', 'Company_Secretary', 'Sports_Management']:
+            growth_rate = 0.08
+        elif career_stream in ['Design', 'Fashion_Design', 'Graphic_Design', 'Photography', 'Performing_Arts']:
+            growth_rate = 0.07
+        else:
+            growth_rate = 0.06
+
+        growth_curve = [base_score * (1 + growth_rate * y) for y in years]
+
+        fig2, ax2 = plt.subplots(figsize=(10, 4))
+        ax2.plot(years, growth_curve, marker='o', color=PRIMARY_COLOR, linewidth=2, markersize=6)
+        ax2.fill_between(years, growth_curve, alpha=0.2, color=ACCENT_COLOR_1)
+        ax2.set_xlabel('Years')
+        ax2.set_ylabel('Career Index')
+        ax2.set_title(f'Growth: {career_stream.replace("_", " ")[:20]}')
+        ax2.grid(True, alpha=0.3)
+        ax2.set_facecolor(BACKGROUND_COLOR)
+        fig2.patch.set_facecolor(BACKGROUND_COLOR)
+        plt.tight_layout()
+        st.pyplot(fig2)
+
+        year_1_value = growth_curve[0]
+        year_5_value = growth_curve[4]
+        year_10_value = growth_curve[9]
+        five_year_growth = ((year_5_value - year_1_value) / year_1_value) * 100
+        ten_year_growth = ((year_10_value - year_1_value) / year_1_value) * 100
+
+        st.markdown(f"""
+        <div style='background-color: {SECONDARY_BG}; border-radius: 10px; padding: 15px; 
+                    border-left: 5px solid {PRIMARY_COLOR}; margin-top: 15px;'>
+            <div style='display: flex; justify-content: space-around; text-align: center;'>
+                <div>
+                    <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>Year 1</p>
+                    <p style='color: {PRIMARY_COLOR}; font-size: 1.2rem; font-weight: bold; margin: 0;'>{int(year_1_value)}</p>
+                </div>
+                <div>
+                    <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>Year 5</p>
+                    <p style='color: {ACCENT_COLOR_1}; font-size: 1.2rem; font-weight: bold; margin: 0;'>{int(year_5_value)}</p>
+                </div>
+                <div>
+                    <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>Year 10</p>
+                    <p style='color: {ACCENT_COLOR_2}; font-size: 1.2rem; font-weight: bold; margin: 0;'>{int(year_10_value)}</p>
+                </div>
+                <div>
+                    <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>5Y Growth</p>
+                    <p style='color: {PRIMARY_COLOR}; font-size: 1.2rem; font-weight: bold; margin: 0;'>+{five_year_growth:.0f}%</p>
+                </div>
+                <div>
+                    <p style='color: {TEXT_COLOR}; opacity: 0.8; margin: 0; font-size: 0.8rem;'>10Y Growth</p>
+                    <p style='color: {ACCENT_COLOR_2}; font-size: 1.2rem; font-weight: bold; margin: 0;'>+{ten_year_growth:.0f}%</p>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.info("👆 Generate your recommendations first.")
