@@ -1,0 +1,271 @@
+user_id,math_score,science_score,english_score,economics_score,physical_education_score,computers_score,social_studies_score,primary_interest,secondary_interest,career_stream,user_rating,timestamp
+user1,85,88,78,75,70,82,80,Physics,Mathematics,Engineering,95.0,2024-01-15 10:30:00
+user2,82,91,85,70,65,75,88,Biology,Chemistry,Medical,88.0,2024-01-16 11:15:00
+user3,90,85,80,72,60,95,75,Coding,Mathematics,Computer_Science,92.0,2024-01-17 09:45:00
+user4,70,75,90,65,80,60,92,Arts,Photography,Design,85.0,2024-01-18 14:20:00
+user5,88,82,79,74,68,80,78,Physics,Chemistry,Engineering,90.0,2024-01-19 16:10:00
+user6,91,94,86,68,72,78,85,Biology,Physics,Medical,96.0,2024-01-20 13:30:00
+user7,92,87,83,70,65,94,76,Coding,Physics,Computer_Science,94.0,2024-01-21 10:45:00
+user8,68,72,89,62,78,55,95,Arts,Design,Design,82.0,2024-01-22 15:20:00
+user9,84,79,76,73,65,78,70,Mathematics,Physics,Engineering,87.0,2024-01-23 11:10:00
+user10,89,92,84,71,68,72,86,Chemistry,Biology,Medical,91.0,2024-01-24 14:40:00
+user11,78,81,77,88,62,70,75,Business,Mathematics,Commerce,83.0,2024-01-25 09:15:00
+user12,95,89,82,77,55,92,70,Research,Physics,Research,97.0,2024-01-26 13:45:00
+user13,65,70,88,58,75,48,94,Music,Arts,Music_Media,75.0,2024-01-27 15:30:00
+user14,87,84,79,69,60,75,91,Law,English,Law,89.0,2024-01-28 11:20:00
+user15,76,78,85,92,58,68,80,Economics,Business,Commerce,80.0,2024-01-29 14:10:00
+user16,93,90,81,73,62,96,72,Technology,Coding,Computer_Science,96.0,2024-01-30 10:50:00
+user17,80,83,76,90,55,72,78,Finance,Mathematics,Commerce,85.0,2024-01-31 16:25:00
+user18,71,69,92,60,68,45,96,Writing,English,Humanities,78.0,2024-02-01 12:40:00
+user19,88,86,74,79,58,89,73,Analytics,Mathematics,Research,90.0,2024-02-02 09:30:00
+user20,82,80,84,67,72,68,89,Psychology,Biology,Medical,86.0,2024-02-03 14:15:00
+user21,79,77,81,68,65,75,88,Architecture,Design,Architecture,84.0,2024-02-04 11:45:00
+user22,90,88,83,72,62,85,70,Engineering,Physics,Engineering,93.0,2024-02-05 13:20:00
+user23,85,91,79,66,70,73,87,Medicine,Biology,Medical,92.0,2024-02-06 10:10:00
+user24,72,74,87,60,78,52,94,Fashion,Design,Fashion_Design,76.0,2024-02-07 15:50:00
+user25,86,82,80,71,58,91,74,Data Handling,Mathematics,Computer_Science,88.0,2024-02-08 09:40:00
+user26,81,79,83,64,92,60,78,Sports,Physics,Sports_Management,82.0,2024-02-09 14:30:00
+user27,89,85,77,82,55,87,70,Statistics,Mathematics,Research,91.0,2024-02-10 11:25:00
+user28,77,81,85,63,75,58,90,Culinary,Arts,Culinary_Arts,79.0,2024-02-11 16:15:00
+user29,92,87,84,71,60,95,72,Computer Science,Technology,Computer_Science,95.0,2024-02-12 10:05:00
+user30,83,76,88,68,65,55,94,History,English,Humanities,81.0,2024-02-13 13:55:00
+user31,88,90,75,74,62,82,69,Chemistry,Physics,Engineering,92.0,2024-02-14 09:20:00
+user32,75,72,89,58,70,50,93,Photography,Arts,Photography,77.0,2024-02-15 14:45:00
+user33,91,86,82,76,58,84,71,Mathematics,Physics,Engineering,94.0,2024-02-16 11:30:00
+user34,69,71,90,55,85,48,92,Dance,Music,Performing_Arts,73.0,2024-02-17 16:40:00
+user35,84,83,78,80,60,79,75,Analytics,Statistics,Research,87.0,2024-02-18 10:50:00
+user36,87,89,76,65,72,70,88,Science,Biology,Medical,90.0,2024-02-19 13:10:00
+user37,80,78,84,89,58,68,77,Business,Finance,Commerce,83.0,2024-02-20 09:45:00
+user38,94,91,79,70,55,97,69,Technology,Coding,Computer_Science,97.0,2024-02-21 15:25:00
+user39,73,75,86,62,60,50,95,Literature,English,Humanities,75.0,2024-02-22 11:15:00
+user40,86,84,81,73,64,79,72,Physics,Mathematics,Engineering,89.0,2024-02-23 14:05:00
+user41,82,80,83,68,69,71,86,Biology,Chemistry,Medical,85.0,2024-02-24 10:35:00
+user42,89,87,77,70,58,90,74,Coding,Mathematics,Computer_Science,92.0,2024-02-25 13:50:00
+user43,71,73,88,59,72,54,96,Arts,Photography,Design,74.0,2024-02-26 09:55:00
+user44,85,82,79,91,60,70,77,Economics,Mathematics,Commerce,86.0,2024-02-27 15:15:00
+user45,90,88,80,78,56,88,71,Research,Science,Research,93.0,2024-02-28 11:40:00
+user46,78,76,85,70,62,65,92,Law,English,Law,80.0,2024-02-29 14:25:00
+user47,91,93,78,67,71,74,88,Medicine,Biology,Medical,95.0,2024-03-01 10:20:00
+user48,76,74,87,60,75,53,94,Design,Arts,Design,78.0,2024-03-02 13:35:00
+user49,87,85,81,72,59,92,73,Computer Science,Technology,Computer_Science,90.0,2024-03-03 09:30:00
+user50,83,81,84,88,57,69,79,Finance,Business,Commerce,85.0,2024-03-04 15:05:00
+user51,85,90,75,69,62,94,68,Aviation,Space Technology,Aerospace_Engineering,91.0,2024-03-05 10:30:00
+user52,88,92,70,67,58,95,65,Physics,Engineering,Aerospace_Engineering,93.0,2024-03-06 11:20:00
+user53,82,88,72,65,60,91,70,Space Technology,Aviation,Aerospace_Engineering,89.0,2024-03-07 14:15:00
+user54,86,91,74,68,59,93,66,Engineering,Physics,Aerospace_Engineering,92.0,2024-03-08 09:45:00
+user55,72,68,92,58,71,55,88,Fashion,Design,Fashion_Design,86.0,2024-03-09 13:30:00
+user56,70,65,94,55,68,52,90,Design,Fashion,Fashion_Design,84.0,2024-03-10 15:20:00
+user57,74,70,90,60,69,58,87,Arts,Fashion,Fashion_Design,88.0,2024-03-11 11:10:00
+user58,68,64,95,54,72,50,92,Creative Arts,Design,Fashion_Design,82.0,2024-03-12 16:45:00
+user59,79,91,70,62,68,65,75,Food Science,Nutrition,Food_Science,87.0,2024-03-13 10:15:00
+user60,75,94,68,60,65,62,72,Biology,Chemistry,Food_Science,90.0,2024-03-14 14:30:00
+user61,77,89,72,64,70,68,74,Nutrition,Biology,Food_Science,85.0,2024-03-15 12:20:00
+user62,73,92,69,58,66,60,70,Culinary,Science,Food_Science,83.0,2024-03-16 09:50:00
+user63,92,85,74,68,55,96,64,Coding,Networking,IT_Computer_Science,94.0,2024-03-17 10:30:00
+user64,88,82,76,65,52,94,62,Data Handling,Technology,IT_Computer_Science,91.0,2024-03-18 11:20:00
+user65,90,80,72,62,50,95,60,Cybersecurity,Coding,IT_Computer_Science,92.0,2024-03-19 13:30:00
+user66,86,78,70,60,48,92,58,Networking,Computers,IT_Computer_Science,88.0,2024-03-20 15:20:00
+user67,70,91,68,58,94,62,65,Sports,Biology,Sports_Science,89.0,2024-03-21 10:15:00
+user68,68,94,65,55,96,60,62,Fitness,Health,Sports_Science,92.0,2024-03-22 14:30:00
+user69,72,89,70,60,92,64,68,Physiotherapy,Sports,Sports_Science,87.0,2024-03-23 09:45:00
+user70,66,92,62,54,95,58,60,Athletics,Medicine,Sports_Science,90.0,2024-03-24 11:30:00
+user71,65,82,88,58,94,50,72,Culinary,Arts,Culinary_Arts,86.0,2024-03-25 14:15:00
+user72,62,80,90,55,92,48,75,Chef,Food,Culinary_Arts,88.0,2024-03-26 10:45:00
+user73,68,84,85,60,90,52,70,Restaurant,Business,Culinary_Arts,84.0,2024-03-27 13:20:00
+user74,60,78,92,52,88,45,78,Nutrition,Cooking,Culinary_Arts,82.0,2024-03-28 15:50:00
+user75,58,65,86,50,60,72,68,Photography,Arts,Photography,85.0,2024-03-29 10:30:00
+user76,62,68,88,48,58,75,70,Photojournalism,Media,Photography,87.0,2024-03-30 11:15:00
+user77,55,62,90,45,55,78,72,Commercial,Design,Photography,83.0,2024-03-31 14:20:00
+user78,60,64,92,52,62,80,74,Editing,Film,Photography,88.0,2024-04-01 09:45:00
+user79,58,55,94,48,90,45,82,Dance,Theater,Performing_Arts,89.0,2024-04-02 13:30:00
+user80,62,58,92,50,92,48,85,Music,Film,Performing_Arts,91.0,2024-04-03 15:40:00
+user81,55,52,96,45,88,42,88,Acting,Drama,Performing_Arts,87.0,2024-04-04 11:25:00
+user82,60,54,90,48,94,46,80,Choreography,Dance,Performing_Arts,90.0,2024-04-05 14:15:00
+user83,72,91,68,65,58,70,94,Environment,Biology,Environmental_Science,88.0,2024-04-06 10:20:00
+user84,70,94,65,62,55,68,96,Ecology,Science,Environmental_Science,92.0,2024-04-07 13:45:00
+user85,68,89,70,60,60,65,92,Conservation,Research,Environmental_Science,86.0,2024-04-08 15:30:00
+user86,74,92,62,64,52,72,90,Climate,Geography,Environmental_Science,90.0,2024-04-09 09:55:00
+user87,82,70,88,92,94,68,75,Sports,Business,Sports_Management,89.0,2024-04-10 11:40:00
+user88,80,68,90,90,96,65,72,Management,Athletics,Sports_Management,93.0,2024-04-11 14:25:00
+user89,78,65,92,88,92,62,78,Marketing,Sports,Sports_Management,87.0,2024-04-12 10:50:00
+user90,84,72,86,94,90,70,70,Event,Coaching,Sports_Management,91.0,2024-04-13 13:15:00
+user91,68,72,90,58,55,88,70,Design,Technology,Graphic_Design,86.0,2024-04-14 09:30:00
+user92,65,70,92,55,52,92,68,UI,UX,Graphic_Design,90.0,2024-04-15 11:20:00
+user93,70,68,88,60,58,90,72,Branding,Visual,Graphic_Design,84.0,2024-04-16 14:45:00
+user94,62,65,94,52,50,94,65,Illustration,Digital Art,Graphic_Design,88.0,2024-04-17 10:15:00
+user95,74,60,96,58,48,70,92,Writing,Media,Journalism,87.0,2024-04-18 13:40:00
+user96,70,58,98,55,45,68,94,Reporting,News,Journalism,91.0,2024-04-19 15:55:00
+user97,72,62,94,60,50,72,90,Editing,Publishing,Journalism,85.0,2024-04-20 11:35:00
+user98,68,55,99,52,42,65,96,Content,Research,Journalism,89.0,2024-04-21 14:50:00
+user99,76,91,84,62,58,68,95,Psychology,Counseling,Psychology,88.0,2024-04-22 10:25:00
+user100,74,94,82,60,55,65,97,Therapy,Mental Health,Psychology,92.0,2024-04-23 13:50:00
+user101,72,89,86,58,60,62,94,Research,Behavior,Psychology,86.0,2024-04-24 15:40:00
+user102,78,92,80,64,52,70,92,Clinical,Social Work,Psychology,90.0,2024-04-25 09:45:00
+user103,68,85,88,58,72,50,82,Nutrition,Child Development,Home_Science,84.0,2024-04-26 11:30:00
+user104,65,88,90,55,70,48,85,Dietetics,Health,Home_Science,87.0,2024-04-27 14:20:00
+user105,70,82,92,60,74,52,80,Interior Design,Family,Home_Science,82.0,2024-04-28 10:55:00
+user106,62,86,94,52,68,45,88,Textiles,Nutrition,Home_Science,86.0,2024-04-29 13:10:00
+user107,92,70,88,96,48,75,68,Finance,Taxation,Chartered_Accountancy,94.0,2024-04-30 09:35:00
+user108,90,68,90,94,45,72,65,Auditing,Accounting,Chartered_Accountancy,91.0,2024-05-01 11:45:00
+user109,88,65,92,92,42,70,62,Business,Finance,Chartered_Accountancy,89.0,2024-05-02 14:30:00
+user110,94,72,86,98,50,78,70,Compliance,Corporate,Chartered_Accountancy,95.0,2024-05-03 10:20:00
+user111,85,62,94,90,48,68,88,Law,Compliance,Company_Secretary,87.0,2024-05-04 13:55:00
+user112,82,60,96,88,45,65,92,Corporate Governance,Legal,Company_Secretary,90.0,2024-05-05 15:45:00
+user113,88,64,92,92,50,70,86,Regulatory,Secretarial,Company_Secretary,85.0,2024-05-06 11:15:00
+user114,80,58,98,86,42,62,94,Compliance,Law,Company_Secretary,88.0,2024-05-07 14:40:00
+user115,84,76,82,71,68,79,73,Physics,Mathematics,Engineering,88.0,2024-05-08 10:15:00
+user116,79,88,81,69,72,75,77,Biology,Chemistry,Medical,89.0,2024-05-08 11:30:00
+user117,88,79,85,70,63,91,69,Coding,Mathematics,Computer_Science,91.0,2024-05-08 13:45:00
+user118,73,77,88,61,76,58,90,Arts,Photography,Design,81.0,2024-05-08 14:20:00
+user119,86,81,77,72,66,78,75,Physics,Mathematics,Engineering,87.0,2024-05-08 15:10:00
+user120,80,89,83,65,70,73,84,Biology,Chemistry,Medical,86.0,2024-05-08 16:30:00
+user121,87,83,79,68,61,90,72,Coding,Mathematics,Computer_Science,90.0,2024-05-09 09:15:00
+user122,69,74,86,60,77,54,91,Arts,Design,Design,79.0,2024-05-09 10:45:00
+user123,82,79,75,86,59,71,73,Business,Mathematics,Commerce,84.0,2024-05-09 11:50:00
+user124,91,85,79,74,53,88,68,Research,Physics,Research,92.0,2024-05-09 13:20:00
+user125,63,68,85,55,72,46,90,Music,Arts,Music_Media,74.0,2024-05-09 14:35:00
+user126,85,81,77,67,58,72,88,Law,English,Law,86.0,2024-05-09 15:50:00
+user127,74,76,82,89,56,66,78,Economics,Business,Commerce,81.0,2024-05-09 16:45:00
+user128,89,86,79,70,60,92,70,Technology,Coding,Computer_Science,93.0,2024-05-10 09:30:00
+user129,78,80,74,87,53,69,75,Finance,Mathematics,Commerce,82.0,2024-05-10 10:40:00
+user130,69,67,89,58,65,43,92,Writing,English,Humanities,76.0,2024-05-10 11:55:00
+user131,86,84,72,76,56,85,71,Analytics,Mathematics,Research,88.0,2024-05-10 13:15:00
+user132,80,78,82,64,69,65,84,Psychology,Biology,Medical,84.0,2024-05-10 14:30:00
+user133,77,75,79,65,62,72,85,Architecture,Design,Architecture,82.0,2024-05-10 15:45:00
+user134,87,85,81,70,60,82,68,Engineering,Physics,Engineering,90.0,2024-05-10 16:50:00
+user135,83,89,77,63,68,71,84,Medicine,Biology,Medical,89.0,2024-05-11 09:20:00
+user136,70,72,85,58,75,50,89,Fashion,Design,Fashion_Design,77.0,2024-05-11 10:35:00
+user137,84,80,78,68,56,88,72,Data Handling,Mathematics,Computer_Science,86.0,2024-05-11 11:50:00
+user138,79,77,81,62,89,58,76,Sports,Physics,Sports_Management,80.0,2024-05-11 13:25:00
+user139,87,83,75,79,53,84,68,Statistics,Mathematics,Research,89.0,2024-05-11 14:40:00
+user140,75,79,83,61,72,56,87,Culinary,Arts,Culinary_Arts,78.0,2024-05-11 15:55:00
+user141,90,85,82,69,58,92,70,Computer Science,Technology,Computer_Science,94.0,2024-05-11 17:10:00
+user142,81,74,86,65,62,53,91,History,English,Humanities,79.0,2024-05-12 09:15:00
+user143,86,88,73,71,60,80,67,Chemistry,Physics,Engineering,89.0,2024-05-12 10:30:00
+user144,73,70,87,56,68,48,90,Photography,Arts,Photography,76.0,2024-05-12 11:45:00
+user145,89,84,80,73,56,82,69,Mathematics,Physics,Engineering,91.0,2024-05-12 13:00:00
+user146,67,69,88,53,82,46,89,Dance,Music,Performing_Arts,72.0,2024-05-12 14:15:00
+user147,82,81,76,78,58,77,73,Analytics,Statistics,Research,85.0,2024-05-12 15:30:00
+user148,85,87,74,63,70,68,85,Science,Biology,Medical,88.0,2024-05-12 16:45:00
+user149,78,76,82,86,56,66,75,Business,Finance,Commerce,81.0,2024-05-13 09:20:00
+user150,92,89,77,68,53,94,67,Technology,Coding,Computer_Science,95.0,2024-05-13 10:35:00
+user151,71,73,84,60,58,48,92,Literature,English,Humanities,74.0,2024-05-13 11:50:00
+user152,84,82,79,71,62,77,70,Physics,Mathematics,Engineering,87.0,2024-05-13 13:05:00
+user153,80,78,81,66,67,69,83,Biology,Chemistry,Medical,83.0,2024-05-13 14:20:00
+user154,87,85,75,68,56,88,71,Coding,Mathematics,Computer_Science,90.0,2024-05-13 15:35:00
+user155,69,71,86,57,74,52,93,Arts,Photography,Design,75.0,2024-05-13 16:50:00
+user156,83,80,77,83,58,68,76,Economics,Mathematics,Commerce,84.0,2024-05-14 09:10:00
+user157,88,86,78,72,54,86,69,Research,Science,Research,90.0,2024-05-14 10:25:00
+user158,76,74,83,67,60,63,89,Law,English,Law,79.0,2024-05-14 11:40:00
+user159,89,91,76,65,69,72,85,Medicine,Biology,Medical,93.0,2024-05-14 12:55:00
+user160,74,72,85,58,73,51,91,Design,Arts,Design,77.0,2024-05-14 14:10:00
+user161,85,83,79,69,57,89,71,Computer Science,Technology,Computer_Science,88.0,2024-05-14 15:25:00
+user162,81,79,82,86,55,67,77,Finance,Business,Commerce,83.0,2024-05-14 16:40:00
+user163,83,88,73,67,60,91,64,Aviation,Space Technology,Aerospace_Engineering,89.0,2024-05-15 09:15:00
+user164,86,90,72,65,57,92,63,Physics,Engineering,Aerospace_Engineering,91.0,2024-05-15 10:30:00
+user165,80,86,70,63,58,89,62,Space Technology,Aviation,Aerospace_Engineering,87.0,2024-05-15 11:45:00
+user166,84,89,71,66,56,90,61,Engineering,Physics,Aerospace_Engineering,90.0,2024-05-15 13:00:00
+user167,70,66,90,56,69,53,86,Fashion,Design,Fashion_Design,84.0,2024-05-15 14:15:00
+user168,68,63,92,53,66,50,88,Design,Fashion,Fashion_Design,82.0,2024-05-15 15:30:00
+user169,72,68,88,58,67,56,85,Arts,Fashion,Fashion_Design,86.0,2024-05-15 16:45:00
+user170,66,62,93,52,70,48,90,Creative Arts,Design,Fashion_Design,80.0,2024-05-16 09:20:00
+user171,77,89,68,60,66,63,73,Food Science,Nutrition,Food_Science,85.0,2024-05-16 10:35:00
+user172,73,92,66,58,63,60,70,Biology,Chemistry,Food_Science,88.0,2024-05-16 11:50:00
+user173,75,87,70,62,68,66,72,Nutrition,Biology,Food_Science,83.0,2024-05-16 13:05:00
+user174,71,90,67,56,64,58,68,Culinary,Science,Food_Science,81.0,2024-05-16 14:20:00
+user175,90,83,72,66,53,93,62,Coding,Networking,IT_Computer_Science,92.0,2024-05-16 15:35:00
+user176,86,80,74,63,50,92,60,Data Handling,Technology,IT_Computer_Science,89.0,2024-05-16 16:50:00
+user177,88,78,70,60,48,93,58,Cybersecurity,Coding,IT_Computer_Science,90.0,2024-05-17 09:15:00
+user178,84,76,68,58,46,90,56,Networking,Computers,IT_Computer_Science,86.0,2024-05-17 10:30:00
+user179,68,89,66,56,92,60,63,Sports,Biology,Sports_Science,87.0,2024-05-17 11:45:00
+user180,66,92,63,53,94,58,60,Fitness,Health,Sports_Science,90.0,2024-05-17 13:00:00
+user181,70,87,68,58,90,62,66,Physiotherapy,Sports,Sports_Science,85.0,2024-05-17 14:15:00
+user182,64,90,60,52,93,56,58,Athletics,Medicine,Sports_Science,88.0,2024-05-17 15:30:00
+user183,63,80,86,56,92,48,70,Culinary,Arts,Culinary_Arts,84.0,2024-05-17 16:45:00
+user184,60,78,88,53,90,46,73,Chef,Food,Culinary_Arts,86.0,2024-05-18 09:20:00
+user185,66,82,83,58,88,50,68,Restaurant,Business,Culinary_Arts,82.0,2024-05-18 10:35:00
+user186,58,76,90,50,86,43,76,Nutrition,Cooking,Culinary_Arts,80.0,2024-05-18 11:50:00
+user187,56,63,84,48,58,70,66,Photography,Arts,Photography,83.0,2024-05-18 13:05:00
+user188,60,66,86,46,56,73,68,Photojournalism,Media,Photography,85.0,2024-05-18 14:20:00
+user189,53,60,88,43,53,76,70,Commercial,Design,Photography,81.0,2024-05-18 15:35:00
+user190,58,62,90,50,60,78,72,Editing,Film,Photography,86.0,2024-05-18 16:50:00
+user191,56,53,92,46,88,43,80,Dance,Theater,Performing_Arts,87.0,2024-05-19 09:15:00
+user192,60,56,90,48,90,46,83,Music,Film,Performing_Arts,89.0,2024-05-19 10:30:00
+user193,53,50,94,43,86,40,86,Acting,Drama,Performing_Arts,85.0,2024-05-19 11:45:00
+user194,58,52,88,46,92,44,78,Choreography,Dance,Performing_Arts,88.0,2024-05-19 13:00:00
+user195,70,89,66,63,56,68,92,Environment,Biology,Environmental_Science,86.0,2024-05-19 14:15:00
+user196,68,92,63,60,53,66,94,Ecology,Science,Environmental_Science,90.0,2024-05-19 15:30:00
+user197,66,87,68,58,58,63,90,Conservation,Research,Environmental_Science,84.0,2024-05-19 16:45:00
+user198,72,90,60,62,50,70,88,Climate,Geography,Environmental_Science,88.0,2024-05-20 09:20:00
+user199,80,68,86,90,92,66,73,Sports,Business,Sports_Management,87.0,2024-05-20 10:35:00
+user200,78,66,88,88,94,63,70,Management,Athletics,Sports_Management,91.0,2024-05-20 11:50:00
+user201,76,63,90,86,90,60,76,Marketing,Sports,Sports_Management,85.0,2024-05-20 13:05:00
+user202,82,70,84,92,88,68,68,Event,Coaching,Sports_Management,89.0,2024-05-20 14:20:00
+user203,66,70,88,56,53,86,68,Design,Technology,Graphic_Design,84.0,2024-05-20 15:35:00
+user204,63,68,90,53,50,90,66,UI,UX,Graphic_Design,88.0,2024-05-20 16:50:00
+user205,68,66,86,58,56,88,70,Branding,Visual,Graphic_Design,82.0,2024-05-21 09:15:00
+user206,60,63,92,50,48,92,63,Illustration,Digital Art,Graphic_Design,86.0,2024-05-21 10:30:00
+user207,72,58,94,56,46,68,90,Writing,Media,Journalism,85.0,2024-05-21 11:45:00
+user208,68,56,96,53,43,66,92,Reporting,News,Journalism,89.0,2024-05-21 13:00:00
+user209,70,60,92,58,48,70,88,Editing,Publishing,Journalism,83.0,2024-05-21 14:15:00
+user210,66,53,98,50,40,63,94,Content,Research,Journalism,87.0,2024-05-21 15:30:00
+user211,74,89,82,60,56,66,93,Psychology,Counseling,Psychology,86.0,2024-05-21 16:45:00
+user212,72,92,80,58,53,63,95,Therapy,Mental Health,Psychology,90.0,2024-05-22 09:20:00
+user213,70,87,84,56,58,60,92,Research,Behavior,Psychology,84.0,2024-05-22 10:35:00
+user214,76,90,78,62,50,68,90,Clinical,Social Work,Psychology,88.0,2024-05-22 11:50:00
+user215,66,83,86,56,70,48,80,Nutrition,Child Development,Home_Science,82.0,2024-05-22 13:05:00
+user216,63,86,88,53,68,46,83,Dietetics,Health,Home_Science,85.0,2024-05-22 14:20:00
+user217,68,80,90,58,72,50,78,Interior Design,Family,Home_Science,80.0,2024-05-22 15:35:00
+user218,60,84,92,50,66,43,86,Textiles,Nutrition,Home_Science,84.0,2024-05-22 16:50:00
+user219,90,68,86,94,46,73,66,Finance,Taxation,Chartered_Accountancy,92.0,2024-05-23 09:15:00
+user220,88,66,88,92,43,70,63,Auditing,Accounting,Chartered_Accountancy,89.0,2024-05-23 10:30:00
+user221,86,63,90,90,40,68,60,Business,Finance,Chartered_Accountancy,87.0,2024-05-23 11:45:00
+user222,92,70,84,96,48,76,68,Compliance,Corporate,Chartered_Accountancy,93.0,2024-05-23 13:00:00
+user223,83,60,92,88,46,66,86,Law,Compliance,Company_Secretary,85.0,2024-05-23 14:15:00
+user224,80,58,94,86,43,63,90,Corporate Governance,Legal,Company_Secretary,88.0,2024-05-23 15:30:00
+user225,86,62,90,90,48,68,84,Regulatory,Secretarial,Company_Secretary,83.0,2024-05-23 16:45:00
+user226,78,56,96,84,40,60,92,Compliance,Law,Company_Secretary,86.0,2024-05-24 09:20:00
+username22,89,92,95,88,93,87,91,Analytics,Auditing,,,2026-02-13 00:46:45
+Scarlett,50,50,50,50,50,50,50,Analytics,,Photography,,2026-02-13 10:16:20
+Scarlett,50,50,50,50,50,50,50,Auditing,Child Development,Chartered_Accountancy,,2026-02-13 10:16:30
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 10:38:32
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 10:45:21
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 10:45:24
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 10:51:25
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 11:07:37
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 11:15:17
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 11:25:17
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:13:59
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:16:12
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:16:51
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:16:54
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:17:32
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:17:33
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:17:40
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:17:41
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:19:58
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:33:22
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:39:37
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 12:56:39
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 13:07:01
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 13:09:47
+Scarlett,90,80,100,85,90,70,99,Creative Arts,Culinary,Culinary_Arts,,2026-02-13 13:10:26
+Scarlett,90,98,80,50,85,90,76,Analytics,Auditing,Culinary_Arts,,2026-02-13 14:03:16
+Scarlett,90,98,80,50,85,90,76,Analytics,Auditing,Culinary_Arts,,2026-02-13 14:03:26
+amey5,50,50,50,50,50,50,50,Analytics,Auditing,Chartered_Accountancy,,2026-02-13 14:06:42
+mayu,20,80,93,80,70,10,60,Architecture,Graphic Design,Culinary_Arts,,2026-02-13 15:36:24
+aarnanerkar,98,97,98,0,0,98,95,Engineering,Interior Design,Aerospace_Engineering,,2026-02-13 15:43:46
+aarnanerkar,98,97,98,0,0,98,95,Engineering,Interior Design,Aerospace_Engineering,,2026-02-13 15:43:51
+wdym.aayush,92,89,94,0,0,96,54,Coding,Aviation,IT_Computer_Science,,2026-02-13 16:04:38
+Scarlett,50,50,50,50,50,50,50,Analytics,,Photography,,2026-02-13 16:10:49
+rads_jos16,89,85,95,96,95,95,91,Painting,Computer Science,Culinary_Arts,,2026-02-13 16:19:05
+shiv hugar,86,65,86,0,90,0,87,Sports,Literature,Sports_Science,,2026-02-13 16:26:47
+ekta,72,94,92,0,90,100,88,Business,Aviation,Culinary_Arts,,2026-02-13 16:35:04
+Yati,100,100,100,100,100,100,100,Analytics,,Culinary_Arts,,2026-02-13 16:40:42
+Ruchir,96,92,86,0,90,0,96,Research,Counseling,Psychology,,2026-02-13 16:52:41
+Ruchir,96,92,86,0,90,0,96,Research,Counseling,Psychology,,2026-02-13 16:52:45
+mayur,85,68,73,0,97,0,69,Engineering,Aviation,Performing_Arts,,2026-02-13 17:24:06
+hi its me omsonawane313,51,49,50,0,0,0,60,Analytics,,Photography,,2026-02-13 17:37:47
+hi its me omsonawane313,51,49,50,0,0,0,60,Analytics,,Photography,,2026-02-13 17:37:51
+hi its me omsonawane313,51,49,50,0,0,0,60,Analytics,,Photography,,2026-02-13 17:37:54
+hi its me omsonawane313,51,49,50,0,0,0,60,Analytics,None,Photography,,2026-02-13 17:37:57

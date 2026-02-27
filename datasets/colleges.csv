@@ -1,0 +1,124 @@
+college,country,career_stream,duration,fees,degrees_offered,notes,entrance_test,ranking
+IIT Bombay,India,Engineering,4 years,₹250000/year,B.Tech|Dual Degree,Top engineering institute in India,JEE Advanced,1
+IIT Delhi,India,Engineering,4 years,₹250000/year,B.Tech|Dual Degree,Excellent placement record,JEE Advanced,2
+IIT Madras,India,Engineering,4 years,₹240000/year,B.Tech|M.Tech,Strong research culture,JEE Advanced,3
+MIT,USA,Engineering,4 years,$55000/year,B.Tech|MEng,World-leading tech school,SAT/ACT,1
+Stanford University,USA,Engineering,4 years,$60000/year,B.S.|M.Eng,Top in innovation & startups,SAT/ACT,2
+ETH Zurich,Switzerland,Engineering,3 years,CHF 1500/year,B.Sc.|M.Sc,Top European tech school,None,1
+Caltech,USA,Engineering,4 years,$58000/year,B.S.|M.S.,Strong STEM research,ACT/SAT,3
+TUM,Germany,Engineering,3 years,€3000/year,B.Sc.|M.Sc.,Top German technical university,None,2
+AIIMS Delhi,India,Medical,5.5 years,₹20000/year,MBBS|MD,Top medical college in India,NEET,1
+Christian Medical College,India,Medical,5.5 years,₹50000/year,MBBS|MS,Reputed clinical training,NEET,2
+Harvard Medical School,USA,Medical,4 years,$65000/year,MD,World leader in medicine,MCAT,1
+Johns Hopkins University,USA,Medical,4 years,$63000/year,MD,Excellent research focus,MCAT,2
+University of Oxford,UK,Medical,6 years,£38000/year,MBBS,Historic & research heavy,UKCAT,1
+SRCC Delhi,India,Commerce,3 years,₹50000/year,B.Com|BBA,Top commerce college in India,CUET,1
+St. Xavier's College,India,Commerce,3 years,₹40000/year,B.Com|BMS,Widely respected in commerce,CUET,2
+Wharton School,USA,Commerce,4 years,$62000/year,BBA|MBA,Elite global business education,SAT/ACT,1
+London School of Economics,UK,Commerce,3 years,£23000/year,BSc|MSc,Top in economics & business,SAT/ACT,2
+National University of Singapore,Singapore,Commerce,4 years,S$30000/year,BBA|MSc,Strong Asia business presence,SAT,3
+NID Ahmedabad,India,Design,4 years,₹300000/year,B.Des,Top design institute in India,NID Entrance,1
+IISc Bangalore,India,Design,4 years,₹350000/year,B.Des|M.Des,Great design & tech combo,IISc Entrance,2
+RISD,USA,Design,4 years,$55000/year,BFA|MFA,Leading art/design school,SAT/ACT,1
+Royal College of Art,UK,Design,2 years,£28000/year,MFA,Top postgraduate design school,None,1
+NLSIU Bangalore,India,Law,5 years,₹280000/year,LLB|LLM,Top law school in India,CLAT,1
+Symbiosis Law School,India,Law,5 years,₹250000/year,LLB|LLM,Widely respected,SLAT,2
+Harvard Law School,USA,Law,3 years,$70000/year,J.D.|LL.M,Elite global law school,LSAT,1
+University of Cambridge,UK,Law,3 years,£27000/year,LLB|LLM,Historic legal education,LNAT,1
+IIIT Hyderabad,India,Computer_Science,4 years,₹400000/year,B.Tech|M.Tech,Top CS & research focus,JEE Advanced,1
+Carnegie Mellon University,USA,Computer_Science,4 years,$58000/year,B.S.|M.S.,World leader in CS,SAT/ACT,1
+Stanford University,USA,Computer_Science,4 years,$60000/year,B.S.|M.S.,AI & systems excellence,SAT/ACT,2
+University of Toronto,Canada,Computer_Science,4 years,C$45000/year,B.Sc.|M.Sc.,Strong global CS program,SAT/ACT,1
+Taylor's University,Malaysia,Business_Management,3 years,MYR 40000/year,BBA|MBA,Good regional business program,None,3
+HEC Paris,France,Business_Management,3 years,€30000/year,BBA|MSc,Top European business school,None,1
+University of Melbourne,Australia,Education,4 years,A$30000/year,B.Ed.|M.Ed.,Top education research,None,1
+Teachers College Columbia,USA,Education,2 years,$45000/year,M.Ed.,Prime education institute,None,1
+University of British Columbia,Canada,Environmental_Science,4 years,C$40000/year,B.Sc.|M.Sc.,Top env science research,None,1
+Wageningen University,Netherlands,Environmental_Science,3 years,€10000/year,B.Sc.|M.Sc.,Outstanding sustainability focus,None,1
+Berklee College of Music,USA,Music_Media,4 years,$50000/year,B.Mus.|M.Mus.,Leading creative and performance school,None,1
+Royal College of Music,UK,Music_Media,3 years,£20000/year,B.Mus.|M.Mus.,Top classical & modern music training,None,1
+Juilliard School,USA,Music_Media,4 years,$55000/year,B.Mus.|M.Mus.,Top performance & theory school,None,2
+SPA Delhi,India,Architecture,5 years,₹280000/year,B.Arch|M.Arch,Top architecture college in India,NATA,1
+CEPT University,India,Architecture,5 years,₹260000/year,B.Arch|M.Arch,Excellent for urban design & planning,NATA,2
+IIT Kharagpur,India,Architecture,5 years,₹250000/year,B.Arch|M.Arch,Strong in sustainable architecture,JEE Advanced,3
+Sir JJ College of Architecture,India,Architecture,5 years,₹200000/year,B.Arch|M.Arch,Historic institute with strong alumni,NATA,4
+MIT,USA,Architecture,5 years,$58000/year,B.Arch|M.Arch,World leader in architectural innovation,SAT/ACT,1
+Harvard Graduate School of Design,USA,Architecture,5 years,$65000/year,M.Arch,Top postgraduate architecture school,GRE,2
+University College London,UK,Architecture,5 years,£29000/year,B.Sc.|M.Arch,Strong in urban planning & theory,None,1
+Delft University of Technology,Netherlands,Architecture,3 years,€15000/year,B.Sc.|M.Sc.,Excellent in technical architecture,None,2
+ETH Zurich,Switzerland,Architecture,3 years,CHF 2000/year,B.Sc.|M.Sc.,Top for structural engineering focus,None,3
+National University of Singapore,Singapore,Architecture,4 years,S$35000/year,B.Arch|M.Arch,Strong Asian architecture focus,None,4
+University of Tokyo,Japan,Architecture,4 years,¥1000000/year,B.Eng|M.Eng,Excellent in earthquake-resistant design,None,5
+University of Sydney,Australia,Architecture,5 years,A$45000/year,B.Des.Arch|M.Arch,Strong in environmental architecture,None,6
+University of Cambridge,UK,Architecture,3 years,£31000/year,BA|M.Phil,Historic architecture & preservation,None,7
+Columbia University,USA,Architecture,5 years,$62000/year,B.A.|M.Arch,Strong in urban design theory,SAT/ACT,8
+University of Hong Kong,Hong Kong,Architecture,4 years,HK$180000/year,B.A.S.|M.Arch,Top in Asian architectural studies,None,9
+University of Pennsylvania,USA,Architecture,5 years,$60000/year,B.A.|M.Arch,Excellent design studio culture,SAT/ACT,10
+JNU Delhi,India,Humanities,3 years,₹15000/year,BA|MA|M.Phil|PhD,Top humanities university in India,JNUEE,1
+University of Delhi,India,Humanities,3 years,₹20000/year,BA|MA,Wide range of humanities courses,DUET,2
+University of Calcutta,India,Humanities,3 years,₹12000/year,BA|MA,Historic university strong in arts,Merit-based,3
+University of Hyderabad,India,Humanities,2 years,₹18000/year,MA|M.Phil|PhD,Excellent research in humanities,University Entrance,4
+Fergusson College,India,Humanities,3 years,₹25000/year,BA|B.A.,Reputed liberal arts college,Merit-based,5
+Harvard University,USA,Humanities,4 years,$55000/year,BA|MA|PhD,World leader in humanities education,SAT/ACT,1
+University of Oxford,UK,Humanities,3 years,£28000/year,BA|MA|PhD,Historic excellence in humanities,Personal Statement,2
+University of Cambridge,UK,Humanities,3 years,£27000/year,BA|M.Phil|PhD,Strong in literature & philosophy,Interview,3
+University of Chicago,USA,Humanities,4 years,$58000/year,BA|MA|PhD,Great books core curriculum,SAT/ACT,4
+Stanford University,USA,Humanities,4 years,$60000/year,BA|MA|PhD,Interdisciplinary humanities approach,SAT/ACT,5
+Yale University,USA,Humanities,4 years,$62000/year,BA|MA|PhD,Strong in history and languages,SAT/ACT,6
+University of California Berkeley,USA,Humanities,4 years,$45000/year,BA|MA|PhD,Top public university for humanities,SAT/ACT,7
+London School of Economics,UK,Humanities,3 years,£24000/year,BSc|MSc|PhD,Strong in social sciences & economics,Personal Statement,8
+University of Edinburgh,UK,Humanities,4 years,£22000/year,MA|MSc|PhD,Excellent in literature & history,UCAS,9
+University of Tokyo,Japan,Humanities,4 years,¥800000/year,BA|MA|PhD,Top Asian university for humanities,Entrance Exam,10
+National University of Singapore,Singapore,Humanities,4 years,S$30000/year,BA|MA|PhD,Strong Asian studies program,Merit-based,11
+University of Melbourne,Australia,Humanities,3 years,A$35000/year,BA|MA|PhD,Top in Australia for humanities,ATAR,12
+University of Toronto,Canada,Humanities,4 years,C$40000/year,BA|MA|PhD,Comprehensive humanities programs,High School Grades,13
+Leiden University,Netherlands,Humanities,3 years,€12000/year,BA|MA|PhD,Excellent in European studies,Language Test,14
+University of Copenhagen,Denmark,Humanities,3 years,€10000/year,BA|MA|PhD,Strong in Nordic studies,Language Test,15
+University of Vienna,Austria,Humanities,3 years,€1500/year,BA|MA|PhD,Historic university strong in philosophy,Language Test,16
+IIT Kanpur,India,Aerospace_Engineering,4 years,₹260000/year,B.Tech|M.Tech,Top aerospace program in India,JEE Advanced,1
+Indian Institute of Space Technology,India,Aerospace_Engineering,4 years,₹280000/year,B.Tech|M.Tech,ISRO affiliated institute,JEE Advanced,2
+University of Colorado Boulder,USA,Aerospace_Engineering,4 years,$58000/year,B.S.|M.S.,Strong in astronautics,SAT/ACT,1
+University of Michigan,USA,Aerospace_Engineering,4 years,$60000/year,B.S.|M.Eng,Excellent aerodynamics program,SAT/ACT,2
+Delft University of Technology,Netherlands,Aerospace_Engineering,3 years,€15000/year,B.Sc.|M.Sc.,Top European aerospace,None,1
+NIFT Delhi,India,Fashion_Design,4 years,₹320000/year,B.Des|M.Des,Top fashion institute in India,NIFT Entrance,1
+Fashion Institute of Technology,USA,Fashion_Design,4 years,$55000/year,BFA|MFA,Leading fashion school,SAT/ACT,1
+Central Saint Martins,UK,Fashion_Design,3 years,£22000/year,BA|MA,World-renowned fashion school,Portfolio Review,1
+University of Leeds,UK,Food_Science,3 years,£21000/year,B.Sc.|M.Sc.,Strong food research,UCAS,1
+University of California Davis,USA,Food_Science,4 years,$52000/year,B.S.|M.S.,Top food science program,SAT/ACT,1
+Cornell University,USA,Food_Science,4 years,$58000/year,B.S.|M.S.,Excellent food tech research,SAT/ACT,2
+University of Queensland,Australia,Food_Science,3 years,A$42000/year,B.Sc.|M.Sc.,Strong in food safety,ATAR,1
+Georgia Tech,USA,IT_Computer_Science,4 years,$56000/year,B.S.|M.S.,Strong IT infrastructure focus,SAT/ACT,1
+University of Illinois Urbana-Champaign,USA,IT_Computer_Science,4 years,$54000/year,B.S.|M.S.,Excellent networking program,SAT/ACT,2
+University of Texas at Austin,USA,IT_Computer_Science,4 years,$52000/year,B.S.|M.S.,Strong systems administration,SAT/ACT,3
+Loughborough University,UK,Sports_Science,3 years,£20000/year,B.Sc.|M.Sc.,Top sports science university,UCAS,1
+University of British Columbia,Canada,Sports_Science,4 years,C$42000/year,B.Sc.|M.Sc.,Excellent exercise physiology,High School Grades,1
+Australian Institute of Sport,Australia,Sports_Science,3 years,A$38000/year,B.Sc.|M.Sc.,Elite sports training focus,ATAR,1
+Culinary Institute of America,USA,Culinary_Arts,2 years,$48000/year,Associate|Bachelors,World's premier culinary school,Application,1
+Le Cordon Bleu,France,Culinary_Arts,2 years,€25000/year,Diploma|Degree,Historic culinary institute,Application,1
+Institute of Hotel Management,India,Culinary_Arts,3 years,₹180000/year,B.Sc.|Diploma,Top hotel management in India,Entrance Exam,1
+Lady Irwin College,India,Home_Science,3 years,₹80000/year,B.Sc.|M.Sc.,Top home science college in India,Merit-based,1
+SNDT Women's University,India,Home_Science,3 years,₹70000/year,B.Sc.|M.Sc.,Leading women's university,Merit-based,2
+University of Wisconsin-Madison,USA,Home_Science,4 years,$48000/year,B.S.|M.S.,Strong human ecology program,SAT/ACT,1
+Institute of Chartered Accountants,India,Chartered_Accountancy,3 years,₹50000/year,CA,Professional CA training,CA Entrance,1
+The Institute of Company Secretaries,India,Company_Secretary,3 years,₹45000/year,CS,Professional CS training,CS Entrance,1
+Symbiosis School of Sports Sciences,India,Sports_Management,3 years,₹220000/year,BBA|MBA,Sports management focus,Entrance Exam,1
+University of Florida,USA,Sports_Management,4 years,$52000/year,B.S.|M.S.,Strong sports business program,SAT/ACT,1
+Deakin University,Australia,Sports_Management,3 years,A$35000/year,B.Bus|MBA,Excellent sports marketing,ATAR,1
+Sound Engineering College,USA,Music_Media,2 years,$42000/year,Certificate|Diploma,Audio engineering specialization,Portfolio,1
+SAE Institute,Global,Music_Media,2 years,$45000/year,Diploma|Degree,Creative media education,Application,1
+Rhode Island School of Design,USA,Design,4 years,$56000/year,BFA|MFA,Top design and digital media,SAT/ACT,1
+ArtCenter College of Design,USA,Design,4 years,$58000/year,BFA|MFA,Strong in industrial design,SAT/ACT,2
+University of Southern California,USA,Music_Media,4 years,$62000/year,B.Mus.|M.Mus.,Excellent media production,SAT/ACT,1
+University of Westminster,UK,Music_Media,3 years,£21000/year,BA|MA,Strong media and communication,UCAS,1
+National Institute of Design,India,Photography,4 years,₹280000/year,B.Des|M.Des,Top photography program,NID Entrance,1
+School of Visual Arts,USA,Photography,4 years,$52000/year,BFA|MFA,Leading photography school,SAT/ACT,1
+London College of Communication,UK,Photography,3 years,£21000/year,BA|MA,Excellent photography program,Portfolio,1
+Juilliard School,USA,Performing_Arts,4 years,$55000/year,BFA|MFA,Top performing arts school,Audition,1
+Royal Academy of Dance,UK,Performing_Arts,3 years,£20000/year,BA|MA,World-class dance education,Audition,1
+University of California Berkeley,USA,Environmental_Science,4 years,$48000/year,B.S.|M.S.,Top environmental program,SAT/ACT,1
+Stanford University,USA,Environmental_Science,4 years,$58000/year,B.S.|M.S.,Strong sustainability focus,SAT/ACT,2
+University of Michigan,USA,Sports_Management,4 years,$52000/year,B.S.|M.S.,Excellent sports business,SAT/ACT,1
+Culinary Institute of America,USA,Culinary_Arts,2 years,$48000/year,Associate|Bachelors,World's premier culinary,Application,1
+Rhode Island School of Design,USA,Graphic_Design,4 years,$56000/year,BFA|MFA,Top design school,SAT/ACT,1
+Columbia University,USA,Journalism,2 years,$62000/year,MA,Top journalism school,GRE,1
+University of Pennsylvania,USA,Psychology,4 years,$58000/year,B.A.|Ph.D.,Excellent psychology program,SAT/ACT,1

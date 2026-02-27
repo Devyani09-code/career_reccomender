@@ -1,0 +1,36 @@
+dimension,trait,question,option_a,option_b,option_c,option_d
+RIASEC,Realistic,I enjoy working with tools and machinery,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Realistic,I prefer hands-on work rather than theoretical discussions,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Realistic,Working outdoors appeals to me more than office work,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Investigative,I enjoy analyzing data and finding patterns,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Investigative,I prefer solving complex mathematical or scientific problems,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Investigative,I like conducting experiments and research,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Artistic,I enjoy creating original artwork or designs,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Artistic,I express myself better through creative means than words,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Artistic,I prefer unstructured work environments where I can be creative,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Social,I enjoy helping others solve their problems,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Social,I prefer working in teams rather than alone,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Social,Teaching or training others is something I enjoy,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Social,I am good at understanding people's emotions and motivations,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Enterprising,I enjoy leading projects and taking charge of situations,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Enterprising,I am comfortable with persuading or influencing others,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Enterprising,I would enjoy starting my own business,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Conventional,I prefer organized and structured work environments,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Conventional,I am good at maintaining detailed records and data,Strongly Agree,Agree,Disagree,Strongly Disagree
+RIASEC,Conventional,I enjoy following established procedures and guidelines,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Logical-Mathematical,I enjoy solving puzzles and brain teasers,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Logical-Mathematical,I can easily recognize patterns in numbers or data,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Linguistic,I enjoy reading books and writing,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Linguistic,I am good at expressing my thoughts through words,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Spatial,I can easily visualize objects in 3D space,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Spatial,I enjoy activities like drawing painting or photography,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Bodily-Kinesthetic,I learn best by doing things physically,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Bodily-Kinesthetic,I enjoy sports or physical activities,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Musical,I can easily remember melodies and rhythms,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Musical,I enjoy playing musical instruments or singing,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Interpersonal,I enjoy meeting new people and making friends,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Interpersonal,I am good at resolving conflicts between people,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Intrapersonal,I regularly reflect on my thoughts and feelings,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Intrapersonal,I am aware of my strengths and weaknesses,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Naturalistic,I enjoy spending time in nature,Strongly Agree,Agree,Disagree,Strongly Disagree
+Multiple_Intelligence,Naturalistic,I am interested in environmental issues,Strongly Agree,Agree,Disagree,Strongly Disagree
