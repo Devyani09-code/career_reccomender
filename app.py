@@ -17,11 +17,11 @@ import bcrypt
 
 # --- DATABASE CONFIG ---
 DB_CONFIG = {
-    'host': st.secrets["db.jeyypqpiqgcgfzfmxcus.supabase.co"],
-    'dbname': st.secrets["postgres"],
+    'host': st.secrets["db_host"],
+    'dbname': st.secrets["db_name"],
     'user': st.secrets["db_user"],
-    'password': st.secrets["DATABASE_supabase"],
-    'port': st.secrets["5432"]
+    'password': st.secrets["db_password"],
+    'port': st.secrets["db_port"]
 }
 
 def get_db_connection():
@@ -1390,3 +1390,4 @@ with tabs[2]:
         """, unsafe_allow_html=True)
     else:
         st.info("👆 Generate your recommendations first.")
+
