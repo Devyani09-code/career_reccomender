@@ -10,7 +10,27 @@ from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from sklearn.metrics import accuracy_score
 import joblib
 from collections import defaultdict
+import psycopg2
+from psycopg2 import Error
+import bcrypt
 
+
+# --- DATABASE CONFIG ---
+DB_CONFIG = {
+    'host': st.secrets["db.jeyypqpiqgcgfzfmxcus.supabase.co"],
+    'dbname': st.secrets["postgres"],
+    'user': st.secrets["db_user"],
+    'password': st.secrets["DATABASE_supabase"],
+    'port': st.secrets["5432"]
+}
+
+def get_db_connection():
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        return conn
+    except Error as e:
+        st.error(f"Database connection failed: {e}")
+        return None
 # Import styling from separate file
 from styles import load_css, get_colors
 
@@ -21,12 +41,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# if "animation_played" not in st.session_state:
-#     st.session_state.animation_played = False   # <--- YOU ARE MISSING THIS
-# if "logged_in" not in st.session_state:
-#     st.session_state.logged_in = False
-# if "username" not in st.session_state:
-#     st.session_state.username = ""
 
 # Apply CSS styling
 st.markdown(load_css(), unsafe_allow_html=True)
@@ -155,40 +169,62 @@ def login_system():
     username = st.sidebar.text_input("Username")
     password = st.sidebar.text_input("Password", type="password")
 
-        # Ensure users.csv exists
-    if not os.path.exists(USERS_FILE):
-        pd.DataFrame(columns=["username", "password", "join_date", "last_login"]).to_csv(USERS_FILE, index=False)
-
-    users_df = pd.read_csv(USERS_FILE)
-
     if st.sidebar.button(f"{mode}", use_container_width=True):
         if not username or not password:
             st.sidebar.error("Please enter both username and password")
             return
-        if mode == "Signup":
-            if username in users_df["username"].values:
-                st.sidebar.error("Username already exists")
-            else:
-                from datetime import datetime
-                # Add ALL 4 columns: username, password, join_date, last_login
-                users_df.loc[len(users_df)] = [username, password, datetime.now().isoformat(), ""]
-                users_df.to_csv(USERS_FILE, index=False)
-                st.sidebar.success("Signup successful! Please login.")
-        else:  # Login
-            user = users_df[(users_df["username"]==username) & (users_df["password"]==password)]
-            if not user.empty:
-                from datetime import datetime
-                # Update last_login for this user
-                users_df.loc[users_df["username"]==username, "last_login"] = datetime.now().isoformat()
-                users_df.to_csv(USERS_FILE, index=False)
-                
-                st.session_state.logged_in = True
-                st.session_state.username = username
-                st.sidebar.success(f"Welcome, {username}!")
-                st.rerun()
-            else:
-                st.sidebar.error("Invalid credentials")
 
+        conn = get_db_connection()
+        if not conn:
+            return
+        cursor = conn.cursor()
+
+        try:
+            if mode == "Signup":
+                cursor.execute("SELECT username FROM users WHERE username = %s", (username,))
+                if cursor.fetchone():
+                    st.sidebar.error("Username already exists")
+                else:
+                    from datetime import datetime
+                    hashed_pw = bcrypt.hashpw(
+                        password.encode('utf-8'), 
+                        bcrypt.gensalt()
+                    ).decode('utf-8')
+                    cursor.execute(
+                        "INSERT INTO users (username, password, last_login) VALUES (%s, %s, %s)",
+                        (username, hashed_pw, datetime.now())
+                    )
+                    conn.commit()
+                    st.sidebar.success("Signup successful! Please login.")
+
+            else:  # Login
+                cursor.execute(
+                    "SELECT username, password FROM users WHERE username = %s", 
+                    (username,)
+                )
+                user = cursor.fetchone()
+                if user and bcrypt.checkpw(
+                    password.encode('utf-8'), 
+                    user[1].encode('utf-8')
+                ):
+                    from datetime import datetime
+                    cursor.execute(
+                        "UPDATE users SET last_login = %s WHERE username = %s",
+                        (datetime.now(), username)
+                    )
+                    conn.commit()
+                    st.session_state.logged_in = True
+                    st.session_state.username = username
+                    st.sidebar.success(f"Welcome, {username}!")
+                    st.rerun()
+                else:
+                    st.sidebar.error("Invalid credentials")
+
+        except Error as e:
+            st.error(f"Database error: {e}")
+        finally:
+            cursor.close()
+            conn.close()
 # --- LOGOUT FUNCTION ---
 def logout():
     st.session_state.logged_in = False
@@ -241,15 +277,21 @@ def load_or_train_ml_models():
 def train_ml_models():
     try:
         y=None
-        if not os.path.exists(HISTORY_FILE):
-            st.sidebar.info("No user history found. ML models will train when users start using the system.")
-            return False
-        
-        history_df = pd.read_csv(HISTORY_FILE)
+        conn = get_db_connection()
+        if not conn:
+          return False
+        try:
+          history_df = pd.read_sql("SELECT * FROM user_history", conn)
+        finally:
+          conn.close()
+
+        if history_df.empty:
+          st.sidebar.info("No user history found. ML models will train when users start using the system.")
+          return False
         
         if len(history_df) < 30:
-            st.sidebar.info(f"Collecting more user data for ML training ({len(history_df)}/30 samples)")
-            return False
+          st.sidebar.info(f"Collecting more user data for ML training ({len(history_df)}/30 samples)")
+          return False
         
         # Clean data - remove rows with NaN in critical columns
         history_df = history_df.dropna(subset=['math_score', 'science_score', 'english_score',
@@ -393,46 +435,46 @@ def predict_with_ml(user_features, model_type='ensemble'):
         return None
 
 def save_user_data_for_training(username, grades, interests, quiz_scores, career_stream, user_rating=None):
+    conn = get_db_connection()
+    if not conn:
+        return
+    cursor = conn.cursor()
     try:
-        # Create history file if it doesn't exist
-        if not os.path.exists(HISTORY_FILE):
-            pd.DataFrame(columns=[
-                'user_id', 'math_score', 'science_score', 'english_score',
-                'economics_score', 'physical_education_score', 'computers_score', 'social_studies_score',
-                'primary_interest', 'secondary_interest', 'career_stream',
-                'user_rating', 'timestamp'
-            ]).to_csv(HISTORY_FILE, index=False)
-        
-        # Load existing data
-        history_df = pd.read_csv(HISTORY_FILE)
-        
-        # Create new record with ALL 7 subjects
-        new_record = {
-            'user_id': username,
-            'math_score': grades['Math'],
-            'science_score': grades['Science'],
-            'english_score': grades['English'],
-            'economics_score': grades['Economics'],
-            'physical_education_score': grades['Physical Education'],
-            'computers_score': grades['Computers'],
-            'social_studies_score': grades['Social Studies'],
-            'primary_interest': interests['primary'],
-            'secondary_interest': interests['secondary'] if interests['secondary'] != "None" else "None",
-            'career_stream': career_stream,
-            'user_rating': user_rating if user_rating else np.nan,
-            'timestamp': pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')
-        }
-        
-        # Append new record
-        history_df = pd.concat([history_df, pd.DataFrame([new_record])], ignore_index=True)
-        history_df.to_csv(HISTORY_FILE, index=False)
-        
-        # Retrain models if we have enough new data
-        if len(history_df) % 25 == 0 and len(history_df) >= 30:
+        from datetime import datetime
+        cursor.execute("""
+            INSERT INTO user_history (
+                user_id, math_score, science_score, english_score,
+                economics_score, physical_education_score, computers_score,
+                social_studies_score, primary_interest, secondary_interest,
+                career_stream, user_rating, timestamp
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (
+            username,
+            grades['Math'],
+            grades['Science'],
+            grades['English'],
+            grades['Economics'],
+            grades['Physical Education'],
+            grades['Computers'],
+            grades['Social Studies'],
+            interests['primary'],
+            interests['secondary'] if interests['secondary'] != "None" else None,
+            career_stream,
+            user_rating if user_rating else None,
+            datetime.now()
+        ))
+        conn.commit()
+
+        cursor.execute("SELECT COUNT(*) FROM user_history")
+        count = cursor.fetchone()[0]
+        if count % 25 == 0 and count >= 30:
             train_ml_models()
-            
-    except Exception as e:
-        st.error(f"Error saving user data: {e}")
+
+    except Error as e:
+        st.error(f"Error saving to database: {e}")
+    finally:
+        cursor.close()
+        conn.close()
 # --- SHOW LOGIN PAGE OR WELCOME SCREEN ---
 if not st.session_state.logged_in:
     # Clean homepage with your theme
@@ -1348,4 +1390,3 @@ with tabs[2]:
         """, unsafe_allow_html=True)
     else:
         st.info("👆 Generate your recommendations first.")
-
