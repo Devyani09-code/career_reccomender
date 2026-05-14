@@ -3,7 +3,7 @@ career_recommender_system
 The project is an evaluation system that helps you decide your stream.The platform is built using Machine Learning, Psychometric Analysis, and Streamlit.
 Our project helps students discover a career path based on academic performance,personal interests,psychometric analysis,AI_based learning models and market demands.
 
-The Machine Learning models used are:
+The Machine Learning models used are:    
 Scikit-learn
 Logistic Regression
 Naive Bayes
