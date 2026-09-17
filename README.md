@@ -27,5 +27,7 @@ This project made me do more than just write code I had to figure out how to tur
 Built as a group project (3 members) as part of an AI-based assignment requirement.
 
 ## Visuals
-Login[Login.jpeg]
+Login[https://github.com/Devyani09-code/career_reccomender/blob/main/Login.jpeg]
 Dashboard[https://github.com/Devyani09-code/career_reccomender/blob/main/dashboard.jpeg]
+Result[https://github.com/Devyani09-code/career_reccomender/blob/main/result.jpeg]
+Score Breakdown[https://github.com/Devyani09-code/career_reccomender/blob/main/score_breakdown.jpeg]
