@@ -22,7 +22,7 @@ This p‌roject was more than just writing code, it p‌ushed me to take abstrac
 This was put togeth​er as a group project, there we‍re three members, fulfilling part of an AI-based assignment requirement.
 
 ## Visuals
-Login[https://github.com/Devyani09-code/career_reccomender/blob/main/Login.jpeg]
-Dashboard[https://github.com/Devyani09-code/career_reccomender/blob/main/dashboard.jpeg]
+Login[https://github.com/Devyani09-code/career_reccomender/blob/main/Login.jpeg] \
+Dashboard[https://github.com/Devyani09-code/career_reccomender/blob/main/dashboard.jpeg] \
 Result[https://github.com/Devyani09-code/career_reccomender/blob/main/result.jpeg] \
 Score Breakdown[https://github.com/Devyani09-code/career_reccomender/blob/main/score_breakdown.jpeg]
