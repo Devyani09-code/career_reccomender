@@ -9,10 +9,10 @@ The score for the recommendation comes from four ma​in components. There is th
 The psychometric part of the system u⁠ses RIASEC personality traits, and also combines interest and behavior information, to fi‍gure out suitability before it creates the final output.
 
 ## Tech Stack
-Scikit-learn, Logistic Regression
-Naive BayesData HandlingPandas
-NumPyVisualization Matplotlib
-Frontend/AppStreamlit, HTML CSS
+Scikit-learn, Logistic Regression \ 
+Naive BayesData HandlingPandas \
+NumPyVisualization Matplotlib \
+Frontend/AppStreamlit, HTML CSS \
 Backend/DatabaseSupabase (for storing user records)
 
 ## What I Learned
@@ -24,5 +24,5 @@ This was put togeth​er as a group project, there we‍re three members, fulfil
 ## Visuals
 Login[https://github.com/Devyani09-code/career_reccomender/blob/main/Login.jpeg]
 Dashboard[https://github.com/Devyani09-code/career_reccomender/blob/main/dashboard.jpeg]
-Result[https://github.com/Devyani09-code/career_reccomender/blob/main/result.jpeg] 
+Result[https://github.com/Devyani09-code/career_reccomender/blob/main/result.jpeg] \
 Score Breakdown[https://github.com/Devyani09-code/career_reccomender/blob/main/score_breakdown.jpeg]
